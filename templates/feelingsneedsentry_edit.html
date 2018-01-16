@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} feelingsneedsentry</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} feelingsneedsentry</h1>
+        {{#id}}
+        {{#page_config.can_delete}}
+        <form action="{{svc}}/feelings-needsentries/{{id}}" method="post" data-ajax="false"
+          data-wq-json="true" data-wq-background-sync="false"
+          onsubmit="return require('wq/app').confirmSubmit(this, 'Are you sure you want to delete this record?');">
+          {{>csrf}}
+          <input type=hidden name="_method" value="DELETE">
+          <button type="submit" data-icon="delete" class="ui-btn-right">
+            Delete
+          </button>
+        </form>
+        {{/page_config.can_delete}}
+        {{/id}}
+      </div>
+      <div role="main" class="ui-content">
+        <form action="{{svc}}/feelings-needsentries/{{id}}" method="post" data-ajax="false"
+            data-wq-json="true"
+            {{#outbox_id}}
+              data-wq-outbox-id="{{outbox_id}}"
+              data-wq-outbox-preserve=""
+            {{/outbox_id}}>
+          {{>csrf}}
+          {{#id}}
+          <input type=hidden name="_method" value="PUT">
+          {{/id}}
+          <ul data-role="listview" data-inset="true">
+            <li class="ui-field-contain">
+              <label for='feelingsneedsentry-user_id'>User</label>
+              <select id='feelingsneedsentry-user_id' data-xform-type='string' name='user_id' required>
+                <option value="">Select one...</option>
+                {{#user_list}}
+                <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                 {{#outbox}}*{{/outbox}} {{label}}
+                </option>
+                {{/user_list}}
+              </select>
+              <p class='error feelingsneedsentry-user_id-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feelingsneedsentry-feeling_id'>Feeling</label>
+              <select id='feelingsneedsentry-feeling_id' data-xform-type='string' name='feeling_id' required>
+                <option value="">Select one...</option>
+                {{#feeling_list}}
+                <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                 {{#outbox}}*{{/outbox}} {{label}}
+                </option>
+                {{/feeling_list}}
+              </select>
+              <p class='error feelingsneedsentry-feeling_id-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feelingsneedsentry-need_id'>Need</label>
+              <select id='feelingsneedsentry-need_id' data-xform-type='string' name='need_id' required>
+                <option value="">Select one...</option>
+                {{#need_list}}
+                <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                 {{#outbox}}*{{/outbox}} {{label}}
+                </option>
+                {{/need_list}}
+              </select>
+              <p class='error feelingsneedsentry-need_id-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feelingsneedsentry-notes'>Notes</label>
+              <textarea id='feelingsneedsentry-notes' name='notes' data-xform-type="text">{{notes}}</textarea>
+              <p class='error feelingsneedsentry-notes-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feelingsneedsentry-public'>Public</label>
+              <input id='feelingsneedsentry-public' type='text' data-xform-type='string' name='public' value="{{public}}">
+              <p class='error feelingsneedsentry-public-errors'></p>
+            </li>
+            <li>
+              <div class="ui-grid-a">
+                <div class="ui-block-a">
+                  <a href="{{rt}}/feelings-needsentries/{{id}}" data-role="button" data-icon="back" data-direction="reverse">
+                    Back
+                  </a>
+                </div>
+                <div class="ui-block-b">
+                  <button type="submit" data-icon="check" data-theme="b">
+                    Submit
+                  </button>
+                </div>
+              </div>
+              <p class="error feelingsneedsentry-errors"></p>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

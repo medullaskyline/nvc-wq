@@ -1,0 +1,802 @@
+[
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "subsistence",
+            "name": "air"
+        },
+        "pk": 1
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "subsistence",
+            "name": "food"
+        },
+        "pk": 2
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "subsistence",
+            "name": "movement/exercise"
+        },
+        "pk": 3
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "subsistence",
+            "name": "sleep"
+        },
+        "pk": 4
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "subsistence",
+            "name": "shelter"
+        },
+        "pk": 5
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "subsistence",
+            "name": "water"
+        },
+        "pk": 6
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "safety"
+        },
+        "pk": 7
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "security"
+        },
+        "pk": 8
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "stability"
+        },
+        "pk": 9
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "predictability"
+        },
+        "pk": 10
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "consistency"
+        },
+        "pk": 11
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "trust"
+        },
+        "pk": 12
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "reassurance"
+        },
+        "pk": 13
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "peace"
+        },
+        "pk": 14
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "communion"
+        },
+        "pk": 15
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "ease"
+        },
+        "pk": 16
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "hope"
+        },
+        "pk": 17
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "healing"
+        },
+        "pk": 18
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "harmony"
+        },
+        "pk": 19
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "comfort"
+        },
+        "pk": 20
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "order"
+        },
+        "pk": 21
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "structure"
+        },
+        "pk": 22
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "honesty"
+        },
+        "pk": 23
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "authenticity"
+        },
+        "pk": 24
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "integrity"
+        },
+        "pk": 25
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "wholeness"
+        },
+        "pk": 26
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "fairness"
+        },
+        "pk": 27
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "protection",
+            "name": "justice"
+        },
+        "pk": 28
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "connection"
+        },
+        "pk": 29
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "acceptance"
+        },
+        "pk": 30
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "affection"
+        },
+        "pk": 31
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "appreciation"
+        },
+        "pk": 32
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "communication"
+        },
+        "pk": 33
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "closeness"
+        },
+        "pk": 34
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "companionship"
+        },
+        "pk": 35
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "compassion"
+        },
+        "pk": 36
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "consideration"
+        },
+        "pk": 37
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "intimacy"
+        },
+        "pk": 38
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "mutuality"
+        },
+        "pk": 39
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "nurturing"
+        },
+        "pk": 40
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "respect"
+        },
+        "pk": 41
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "self-respect"
+        },
+        "pk": 42
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "self-esteem"
+        },
+        "pk": 43
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "love",
+            "name": "touch"
+        },
+        "pk": 44
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "understanding",
+            "name": "empathy"
+        },
+        "pk": 45
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "understanding",
+            "name": "support"
+        },
+        "pk": 46
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "understanding",
+            "name": "to know and be known"
+        },
+        "pk": 47
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "understanding",
+            "name": "to see/hear and be seen/heard"
+        },
+        "pk": 48
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "understanding",
+            "name": "to understand and be understood"
+        },
+        "pk": 49
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "understanding",
+            "name": "be understood"
+        },
+        "pk": 50
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "understanding",
+            "name": "honor"
+        },
+        "pk": 51
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "understanding",
+            "name": "respect"
+        },
+        "pk": 52
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "understanding",
+            "name": "information"
+        },
+        "pk": 53
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "understanding",
+            "name": "clarity"
+        },
+        "pk": 54
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "community",
+            "name": "equality"
+        },
+        "pk": 55
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "community",
+            "name": "family"
+        },
+        "pk": 56
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "community",
+            "name": "mutuality"
+        },
+        "pk": 57
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "community",
+            "name": "friendship"
+        },
+        "pk": 58
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "community",
+            "name": "support"
+        },
+        "pk": 59
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "community",
+            "name": "collaboration"
+        },
+        "pk": 60
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "community",
+            "name": "acknowledgment"
+        },
+        "pk": 61
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "community",
+            "name": "cooperation"
+        },
+        "pk": 62
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "community",
+            "name": "partnership"
+        },
+        "pk": 63
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "community",
+            "name": "belonging"
+        },
+        "pk": 64
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "community",
+            "name": "inclusion"
+        },
+        "pk": 65
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "freedom",
+            "name": "choice"
+        },
+        "pk": 66
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "freedom",
+            "name": "autonomy"
+        },
+        "pk": 67
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "freedom",
+            "name": "spontaneity"
+        },
+        "pk": 68
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "freedom",
+            "name": "independence"
+        },
+        "pk": 69
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "freedom",
+            "name": "assertiveness"
+        },
+        "pk": 70
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "freedom",
+            "name": "differentiation"
+        },
+        "pk": 71
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "creativity",
+            "name": "learning"
+        },
+        "pk": 72
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "creativity",
+            "name": "discovery"
+        },
+        "pk": 73
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "creativity",
+            "name": "self-expression"
+        },
+        "pk": 74
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "creativity",
+            "name": "stimulation"
+        },
+        "pk": 75
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "creativity",
+            "name": "growth"
+        },
+        "pk": 76
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "creativity",
+            "name": "celebration of life"
+        },
+        "pk": 77
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "creativity",
+            "name": "inspiration"
+        },
+        "pk": 78
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "meaning/purpose",
+            "name": "participation"
+        },
+        "pk": 79
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "meaning/purpose",
+            "name": "challenge"
+        },
+        "pk": 80
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "meaning/purpose",
+            "name": "competence"
+        },
+        "pk": 81
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "meaning/purpose",
+            "name": "consciousness"
+        },
+        "pk": 82
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "meaning/purpose",
+            "name": "contribution"
+        },
+        "pk": 83
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "meaning/purpose",
+            "name": "efficacy"
+        },
+        "pk": 84
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "meaning/purpose",
+            "name": "effectiveness"
+        },
+        "pk": 85
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "meaning/purpose",
+            "name": "focus"
+        },
+        "pk": 86
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "meaning/purpose",
+            "name": "hope"
+        },
+        "pk": 87
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "meaning/purpose",
+            "name": "to matter"
+        },
+        "pk": 88
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "play"
+        },
+        "pk": 89
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "joy"
+        },
+        "pk": 90
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "humor"
+        },
+        "pk": 91
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "expression"
+        },
+        "pk": 92
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "aliveness"
+        },
+        "pk": 93
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "beauty"
+        },
+        "pk": 94
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "celebration"
+        },
+        "pk": 95
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "mourning"
+        },
+        "pk": 96
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "leisure"
+        },
+        "pk": 97
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "awareness"
+        },
+        "pk": 98
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "presence"
+        },
+        "pk": 99
+    },
+    {
+        "model": "entries.Need",
+        "fields": {
+            "category": "rest",
+            "name": "groundedness"
+        },
+        "pk": 100
+    }
+]

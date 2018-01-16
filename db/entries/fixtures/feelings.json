@@ -1,0 +1,2954 @@
+[
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "affectionate"
+        },
+        "pk": 1
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "friendly"
+        },
+        "pk": 2
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "loving"
+        },
+        "pk": 3
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "warm"
+        },
+        "pk": 4
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "hopeful"
+        },
+        "pk": 5
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "expectant"
+        },
+        "pk": 6
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "encouraged"
+        },
+        "pk": 7
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "optimistic"
+        },
+        "pk": 8
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "confident"
+        },
+        "pk": 9
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "empowered"
+        },
+        "pk": 10
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "proud"
+        },
+        "pk": 11
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "safe"
+        },
+        "pk": 12
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "secure"
+        },
+        "pk": 13
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "excited"
+        },
+        "pk": 14
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "animated"
+        },
+        "pk": 15
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "ardent"
+        },
+        "pk": 16
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "aroused"
+        },
+        "pk": 17
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "dazzled"
+        },
+        "pk": 18
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "eager"
+        },
+        "pk": 19
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "enthusiastic"
+        },
+        "pk": 20
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "giddy"
+        },
+        "pk": 21
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "invigorated"
+        },
+        "pk": 22
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "lively"
+        },
+        "pk": 23
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "vibrant"
+        },
+        "pk": 24
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "grateful"
+        },
+        "pk": 25
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "appreciative"
+        },
+        "pk": 26
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "moved"
+        },
+        "pk": 27
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "thankful"
+        },
+        "pk": 28
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "touched"
+        },
+        "pk": 29
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "inspired"
+        },
+        "pk": 30
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "amazed"
+        },
+        "pk": 31
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "wonder"
+        },
+        "pk": 32
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "joyful"
+        },
+        "pk": 33
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "amused"
+        },
+        "pk": 34
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "delighted"
+        },
+        "pk": 35
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "glad"
+        },
+        "pk": 36
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "happy"
+        },
+        "pk": 37
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "jubilant"
+        },
+        "pk": 38
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "pleased"
+        },
+        "pk": 39
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "tickled"
+        },
+        "pk": 40
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "exhilarated"
+        },
+        "pk": 41
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "blissful"
+        },
+        "pk": 42
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "ecstatic"
+        },
+        "pk": 43
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "elated"
+        },
+        "pk": 44
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "enthralled"
+        },
+        "pk": 45
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "exuberant"
+        },
+        "pk": 46
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "radiant"
+        },
+        "pk": 47
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "rapturous"
+        },
+        "pk": 48
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "thrilled"
+        },
+        "pk": 49
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "peaceful"
+        },
+        "pk": 50
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "comfortable"
+        },
+        "pk": 51
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "content"
+        },
+        "pk": 52
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "fulfilled"
+        },
+        "pk": 53
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "relaxed"
+        },
+        "pk": 54
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "relieved"
+        },
+        "pk": 55
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "enjoyment",
+            "name": "satisfied"
+        },
+        "pk": 56
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "sad"
+        },
+        "pk": 57
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "anguished"
+        },
+        "pk": 58
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "bereaved"
+        },
+        "pk": 59
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "devastated"
+        },
+        "pk": 60
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "grief"
+        },
+        "pk": 61
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "heartbroken"
+        },
+        "pk": 62
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "hurt"
+        },
+        "pk": 63
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "miserable"
+        },
+        "pk": 64
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "regretful"
+        },
+        "pk": 65
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "remorseful"
+        },
+        "pk": 66
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "dejected"
+        },
+        "pk": 67
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "despair"
+        },
+        "pk": 68
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "despondent"
+        },
+        "pk": 69
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "discouraged"
+        },
+        "pk": 70
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "disheartened"
+        },
+        "pk": 71
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "forlorn"
+        },
+        "pk": 72
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "gloomy"
+        },
+        "pk": 73
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "heavy hearted"
+        },
+        "pk": 74
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "hopeless"
+        },
+        "pk": 75
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "melancholy"
+        },
+        "pk": 76
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "resigned"
+        },
+        "pk": 77
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "unhappy"
+        },
+        "pk": 78
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "wretched"
+        },
+        "pk": 79
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "dismayed"
+        },
+        "pk": 80
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "disappointed"
+        },
+        "pk": 81
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "nostalgic"
+        },
+        "pk": 82
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "sadness",
+            "name": "wistful"
+        },
+        "pk": 83
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "afraid"
+        },
+        "pk": 84
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "apprehensive"
+        },
+        "pk": 85
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "wary"
+        },
+        "pk": 86
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "worried"
+        },
+        "pk": 87
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "alarmed"
+        },
+        "pk": 88
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "frightened"
+        },
+        "pk": 89
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "foreboding"
+        },
+        "pk": 90
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "scared"
+        },
+        "pk": 91
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "dread"
+        },
+        "pk": 92
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "petrified"
+        },
+        "pk": 93
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "desperate"
+        },
+        "pk": 94
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "panicked"
+        },
+        "pk": 95
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "horrified"
+        },
+        "pk": 96
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "terrified"
+        },
+        "pk": 97
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "leery"
+        },
+        "pk": 98
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "reserved"
+        },
+        "pk": 99
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "hesitant"
+        },
+        "pk": 100
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "anxious"
+        },
+        "pk": 101
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "nervous"
+        },
+        "pk": 102
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "vigilant"
+        },
+        "pk": 103
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "stressed out"
+        },
+        "pk": 104
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "suspicious"
+        },
+        "pk": 105
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "vulnerable"
+        },
+        "pk": 106
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "fragile"
+        },
+        "pk": 107
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "guarded"
+        },
+        "pk": 108
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "helpless"
+        },
+        "pk": 109
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "insecure"
+        },
+        "pk": 110
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "sensitive"
+        },
+        "pk": 111
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "distressed"
+        },
+        "pk": 112
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "distraught"
+        },
+        "pk": 113
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "fear",
+            "name": "unnerved"
+        },
+        "pk": 114
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "annoyed"
+        },
+        "pk": 115
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "aggravated"
+        },
+        "pk": 116
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "disgruntled"
+        },
+        "pk": 117
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "displeased"
+        },
+        "pk": 118
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "exasperated"
+        },
+        "pk": 119
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "frustrated"
+        },
+        "pk": 120
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "impatient"
+        },
+        "pk": 121
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "irritated"
+        },
+        "pk": 122
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "irked"
+        },
+        "pk": 123
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "angry"
+        },
+        "pk": 124
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "enraged"
+        },
+        "pk": 125
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "furious"
+        },
+        "pk": 126
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "incensed"
+        },
+        "pk": 127
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "indignant"
+        },
+        "pk": 128
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "irate"
+        },
+        "pk": 129
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "livid"
+        },
+        "pk": 130
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "outraged"
+        },
+        "pk": 131
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "resentful"
+        },
+        "pk": 132
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "cranky"
+        },
+        "pk": 133
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "anger",
+            "name": "irritable"
+        },
+        "pk": 134
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "aversion"
+        },
+        "pk": 135
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "appalled"
+        },
+        "pk": 136
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "dislike"
+        },
+        "pk": 137
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "repulsed"
+        },
+        "pk": 138
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "embarrassed"
+        },
+        "pk": 139
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "ashamed"
+        },
+        "pk": 140
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "chagrined"
+        },
+        "pk": 141
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "mortified"
+        },
+        "pk": 142
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "self-conscious"
+        },
+        "pk": 143
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "guilty"
+        },
+        "pk": 144
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "self-loathing"
+        },
+        "pk": 145
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "animosity"
+        },
+        "pk": 146
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "contempt"
+        },
+        "pk": 147
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "hate"
+        },
+        "pk": 148
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "loathing"
+        },
+        "pk": 149
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "hostile"
+        },
+        "pk": 150
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "emotional",
+            "sub_category": "disgust",
+            "name": "revulsion"
+        },
+        "pk": 151
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "fatigue"
+        },
+        "pk": 152
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "beat"
+        },
+        "pk": 153
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "depleted"
+        },
+        "pk": 154
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "exhausted"
+        },
+        "pk": 155
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "lethargic"
+        },
+        "pk": 156
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "listless"
+        },
+        "pk": 157
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "sleepy"
+        },
+        "pk": 158
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "tired"
+        },
+        "pk": 159
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "weary"
+        },
+        "pk": 160
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "worn out"
+        },
+        "pk": 161
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "light-headed"
+        },
+        "pk": 162
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "dazed"
+        },
+        "pk": 163
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "intoxicated"
+        },
+        "pk": 164
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "refreshed"
+        },
+        "pk": 165
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "energetic"
+        },
+        "pk": 166
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "enlivened"
+        },
+        "pk": 167
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "rejuvenated"
+        },
+        "pk": 168
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "renewed"
+        },
+        "pk": 169
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "rested"
+        },
+        "pk": 170
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "restored"
+        },
+        "pk": 171
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "alert"
+        },
+        "pk": 172
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "relaxed"
+        },
+        "pk": 173
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "stretched"
+        },
+        "pk": 174
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "limber"
+        },
+        "pk": 175
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "tense"
+        },
+        "pk": 176
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "edgy"
+        },
+        "pk": 177
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "restless"
+        },
+        "pk": 178
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "fidgety"
+        },
+        "pk": 179
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "jittery"
+        },
+        "pk": 180
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "shaky"
+        },
+        "pk": 181
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "tension"
+        },
+        "pk": 182
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "tightness"
+        },
+        "pk": 183
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "out of breath"
+        },
+        "pk": 184
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "energy",
+            "name": "inflexible"
+        },
+        "pk": 185
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "pain"
+        },
+        "pk": 186
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "agony"
+        },
+        "pk": 187
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "achy"
+        },
+        "pk": 188
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "itchy"
+        },
+        "pk": 189
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "uncomfortable"
+        },
+        "pk": 190
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "crampy"
+        },
+        "pk": 191
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "comfortable"
+        },
+        "pk": 192
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "fulfilled"
+        },
+        "pk": 193
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "relieved"
+        },
+        "pk": 194
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "satisfied"
+        },
+        "pk": 195
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "open"
+        },
+        "pk": 196
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "pain/pleasure",
+            "name": "pleasure"
+        },
+        "pk": 197
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "food/drink",
+            "name": "hungry"
+        },
+        "pk": 198
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "food/drink",
+            "name": "thirsty"
+        },
+        "pk": 199
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "food/drink",
+            "name": "dehydrated"
+        },
+        "pk": 200
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "food/drink",
+            "name": "satisfied"
+        },
+        "pk": 201
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "food/drink",
+            "name": "restored"
+        },
+        "pk": 202
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "food/drink",
+            "name": "full/stuffed"
+        },
+        "pk": 203
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "food/drink",
+            "name": "bloated"
+        },
+        "pk": 204
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "temperature",
+            "name": "hot"
+        },
+        "pk": 205
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "temperature",
+            "name": "warm"
+        },
+        "pk": 206
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "temperature",
+            "name": "cool"
+        },
+        "pk": 207
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "physical",
+            "sub_category": "temperature",
+            "name": "cold"
+        },
+        "pk": 208
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "calm"
+        },
+        "pk": 209
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "still"
+        },
+        "pk": 210
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "serene"
+        },
+        "pk": 211
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "equanimous"
+        },
+        "pk": 212
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "clear headed"
+        },
+        "pk": 213
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "patient"
+        },
+        "pk": 214
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "grounded"
+        },
+        "pk": 215
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "attentive"
+        },
+        "pk": 216
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "neutral"
+        },
+        "pk": 217
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "self-possessed"
+        },
+        "pk": 218
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "untroubled"
+        },
+        "pk": 219
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "unbothered"
+        },
+        "pk": 220
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "open hearted"
+        },
+        "pk": 221
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "tranquil"
+        },
+        "pk": 222
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "mellow"
+        },
+        "pk": 223
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "quiet"
+        },
+        "pk": 224
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "awake"
+        },
+        "pk": 225
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "tender"
+        },
+        "pk": 226
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "centered"
+        },
+        "pk": 227
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "curious"
+        },
+        "pk": 228
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "interested"
+        },
+        "pk": 229
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "engaged"
+        },
+        "pk": 230
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "stimulated"
+        },
+        "pk": 231
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "involved"
+        },
+        "pk": 232
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "compassionate"
+        },
+        "pk": 233
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "open"
+        },
+        "pk": 234
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "connected"
+        },
+        "pk": 235
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "loving-kindness"
+        },
+        "pk": 236
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "sympathetic"
+        },
+        "pk": 237
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "generous"
+        },
+        "pk": 238
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "forgiving"
+        },
+        "pk": 239
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "awe"
+        },
+        "pk": 240
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "flow"
+        },
+        "pk": 241
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "empathetic"
+        },
+        "pk": 242
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "connected",
+            "name": "concentration"
+        },
+        "pk": 243
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "intrigued"
+        },
+        "pk": 244
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "anticipation"
+        },
+        "pk": 245
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "impatient"
+        },
+        "pk": 246
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "lonely"
+        },
+        "pk": 247
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "spellbound"
+        },
+        "pk": 248
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "craving"
+        },
+        "pk": 249
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "absorbed"
+        },
+        "pk": 250
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "engrossed"
+        },
+        "pk": 251
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "enchanted"
+        },
+        "pk": 252
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "entranced"
+        },
+        "pk": 253
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "fascinated"
+        },
+        "pk": 254
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "passionate"
+        },
+        "pk": 255
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "yearning"
+        },
+        "pk": 256
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "envious"
+        },
+        "pk": 257
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "longing"
+        },
+        "pk": 258
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "pining"
+        },
+        "pk": 259
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "limerence"
+        },
+        "pk": 260
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "obsessed"
+        },
+        "pk": 261
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "greedy"
+        },
+        "pk": 262
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "horny"
+        },
+        "pk": 263
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "addicted"
+        },
+        "pk": 264
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "aggressive"
+        },
+        "pk": 265
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "jealous"
+        },
+        "pk": 266
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "grasping",
+            "name": "overwhelm"
+        },
+        "pk": 267
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "aloof"
+        },
+        "pk": 268
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "inattentive"
+        },
+        "pk": 269
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "bored"
+        },
+        "pk": 270
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "detached"
+        },
+        "pk": 271
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "passive"
+        },
+        "pk": 272
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "indifferent"
+        },
+        "pk": 273
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "distracted"
+        },
+        "pk": 274
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "removed"
+        },
+        "pk": 275
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "uninterested"
+        },
+        "pk": 276
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "withdrawn"
+        },
+        "pk": 277
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "denial"
+        },
+        "pk": 278
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "apathetic"
+        },
+        "pk": 279
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "cold"
+        },
+        "pk": 280
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "distant"
+        },
+        "pk": 281
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "spaced out"
+        },
+        "pk": 282
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "zoned out"
+        },
+        "pk": 283
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "alienated"
+        },
+        "pk": 284
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "depressed"
+        },
+        "pk": 285
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "lost"
+        },
+        "pk": 286
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "burnt out"
+        },
+        "pk": 287
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "stuck"
+        },
+        "pk": 288
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "numb"
+        },
+        "pk": 289
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "disassociation"
+        },
+        "pk": 290
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "disconnected",
+            "name": "overwhelm"
+        },
+        "pk": 291
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "surprise",
+            "name": "startled"
+        },
+        "pk": 292
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "surprise",
+            "name": "astonished"
+        },
+        "pk": 293
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "surprise",
+            "name": "surprise"
+        },
+        "pk": 294
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "surprise",
+            "name": "shocked"
+        },
+        "pk": 295
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "surprise",
+            "name": "overwhelm"
+        },
+        "pk": 296
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "disconcerted"
+        },
+        "pk": 297
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "perplexed"
+        },
+        "pk": 298
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "puzzled"
+        },
+        "pk": 299
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "doubtful"
+        },
+        "pk": 300
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "torn"
+        },
+        "pk": 301
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "ambivalent"
+        },
+        "pk": 302
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "confused"
+        },
+        "pk": 303
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "bewildered"
+        },
+        "pk": 304
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "mystified"
+        },
+        "pk": 305
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "unsettled"
+        },
+        "pk": 306
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "frazzled"
+        },
+        "pk": 307
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "rattled"
+        },
+        "pk": 308
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "flustered"
+        },
+        "pk": 309
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "baffled"
+        },
+        "pk": 310
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "discombobulated"
+        },
+        "pk": 311
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "delusional"
+        },
+        "pk": 312
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "confusion",
+            "name": "overwhelm"
+        },
+        "pk": 313
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "perturbed"
+        },
+        "pk": 314
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "uncomfortable"
+        },
+        "pk": 315
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "uneasy"
+        },
+        "pk": 316
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "disquiet"
+        },
+        "pk": 317
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "disturbed"
+        },
+        "pk": 318
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "agitated"
+        },
+        "pk": 319
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "troubled"
+        },
+        "pk": 320
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "turbulent"
+        },
+        "pk": 321
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "turmoil"
+        },
+        "pk": 322
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "out of control"
+        },
+        "pk": 323
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "defensive"
+        },
+        "pk": 324
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "schadenfreude"
+        },
+        "pk": 325
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "neurotic"
+        },
+        "pk": 326
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "aggressive"
+        },
+        "pk": 327
+    },
+    {
+        "model": "entries.Feeling",
+        "fields": {
+            "main_category": "mental",
+            "sub_category": "aversion",
+            "name": "overwhelm"
+        },
+        "pk": 328
+    }
+]
