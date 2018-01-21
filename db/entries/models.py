@@ -65,6 +65,7 @@ class BaseEntry(models.Model):
 
 
 class FeelingsNeedsEntry(BaseEntry):
+
     feeling = models.ForeignKey(Feeling)
     need = models.ForeignKey(Need)
     notes = models.TextField(blank=True)

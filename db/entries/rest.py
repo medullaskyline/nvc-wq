@@ -1,9 +1,9 @@
 from wq.db import rest
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group, Permission
 
 from .models import Feeling, Need, FeelingsNeedsEntry
 from .views import FeelingsNeedsEntryViewSet
-from .serializers import FeelingsNeedsEntrySerializer
+from .serializers import FeelingsNeedsEntrySerializer, user_form
 
 
 def filter_entries(queryset, request):
@@ -42,19 +42,23 @@ rest.router.register_model(
 rest.router.register_model(
     FeelingsNeedsEntry,
     fields="__all__",
-    viewset=FeelingsNeedsEntryViewSet,
+    # viewset=FeelingsNeedsEntryViewSet, # disabling bc it doesn't prevent ppl from adding entries with other ppl's user ids
     filter=filter_entries,
     cache_filter=filter_entries,  # wq configuration
     my_custom_flag=True,  # Custom configuration
-    serializer=FeelingsNeedsEntrySerializer,
+    serializer=FeelingsNeedsEntrySerializer,  # this just specifies that public is a boolean
 )
 rest.router.register_model(
     User,
-    fields="__all__",
+    fields=['username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'last_login', 'date_joined'],
     filter=filter_users,
     cache_filter=filter_users,
-    # my_custom_flag=True,  # Custom configuration
+    my_custom_flag=True,  # Custom configuration
+    # serializer=UserSerializer,
     lookup="username",
+    can_add=False,
+    form=user_form,
 )
+
 
 

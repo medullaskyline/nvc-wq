@@ -2,6 +2,7 @@ from wq.db.rest.views import ModelViewSet
 from django.contrib.auth.models import User
 from django.db.models.fields import FieldDoesNotExist
 # from django.contrib.auth.mixins import LoginRequiredMixin
+from rest_framework.decorators import detail_route
 
 from wq.db.rest.model_tools import get_ct, get_object_id, get_by_identifier
 from rest_framework.response import Response
@@ -11,10 +12,12 @@ from rest_framework import status
 
 
 class FeelingsNeedsEntryViewSet(ModelViewSet):
+    # todo: is all this necessary?
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+    @detail_route
     def edit(self, request, *args, **kwargs):
         """
         Generates a context appropriate for editing a form
@@ -60,52 +63,5 @@ class FeelingsNeedsEntryViewSet(ModelViewSet):
         # resp.data['user_list'] = [{'id': request.user.id, 'label': request.user.username, 'selected': True}]
         return resp
 
-    def retrieve(self, request, *args, **kwargs):
-        """
-        Custom retrieve watches for "new" lookup value and switches modes
-        accordingly
-        """
-        if hasattr(self, 'lookup_url_kwarg'):
-            # New in DRF 2.4?
-            lookup = self.lookup_url_kwarg or self.lookup_field
-        else:
-            lookup = self.lookup_field
 
-        if self.kwargs.get(lookup, "") == "new":
-            # new/edit mode
-            return self.new(request)
-        else:
-            # Normal detail view
-            return super().retrieve(request, *args, **kwargs)
-
-    def list(self, request, *args, **kwargs):
-        response = super().list(
-            request, *args, **kwargs
-        )
-        if not isinstance(response.data, dict):
-            return response
-
-        if self.target:
-            response.data['target'] = self.target
-        ct = get_ct(self.model)
-        for pct, fields in ct.get_foreign_keys().items():
-            if len(fields) == 1:
-                self.get_parent(pct, fields[0], response)
-        return response
-
-    def create(self, request, *args, **kwargs):
-        # request.data.user_id = [str(request.user.id)]
-        # request.data.user_id.append(str(request.user.id))
-        response = super().create(
-            request, *args, **kwargs
-        )
-        if not request.accepted_media_type.startswith('text/html'):
-            # JSON request, assume client will handle redirect
-            return response
-
-        # HTML request, probably a form post from an older browser
-        if response.status_code == status.HTTP_201_CREATED:
-            return self.postsave(request, response)
-        else:
-            return self.saveerror(request, response)
 

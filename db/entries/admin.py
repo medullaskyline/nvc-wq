@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.db import models
 from django.forms import Textarea
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Permission
 from django.contrib.auth.admin import UserAdmin
+from django.contrib.contenttypes.models import ContentType
 
 
 from .models import Feeling, Need, FeelingsNeedsEntry
@@ -10,12 +11,8 @@ from .models import Feeling, Need, FeelingsNeedsEntry
 
 @admin.register(Feeling)
 class FeelingAdmin(admin.ModelAdmin):
-    # fields = ['main_category', 'sub_category', 'name']
-    # list_display_links = ('main_category',)
-    # inlines = [SubFeelingInline]
     can_delete = False
     readonly_fields = ('name',)
-    # list_display = ['main_category', 'sub_category', 'name']
 
 
 @admin.register(Need)
@@ -97,3 +94,5 @@ class ExtendedUserAdmin(UserAdmin):
 
 admin.site.unregister(User)
 admin.site.register(User, ExtendedUserAdmin)
+admin.site.register(Permission)
+admin.site.register(ContentType)

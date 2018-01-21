@@ -73,30 +73,8 @@ from wq.db.default_settings import (
     SOCIAL_AUTH_PIPELINE,
 )
 
-TEMPLATES = [{'APP_DIRS': True,
-              'BACKEND': 'django_mustache.Mustache',
-              'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'master_templates')],
-              'OPTIONS': {'context_processors': ('django.template.context_processors.csrf',
-                                                 'django.contrib.auth.context_processors.auth',
-                                                 'wq.db.rest.auth.context_processors.is_authenticated',
-                                                 'wq.db.rest.auth.context_processors.social_auth',
-                                                 'wq.db.rest.context_processors.version',
-                                                 'wq.db.rest.context_processors.router_info',
-                                                 'wq.db.rest.context_processors.wq_config')}},
-             {'APP_DIRS': True,
-              'BACKEND': 'django.template.backends.django.DjangoTemplates',
-              'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'master_templates')],
-              'OPTIONS': {'context_processors': ('django.template.context_processors.csrf',
-                                                 'django.contrib.auth.context_processors.auth',
-                                                 'wq.db.rest.auth.context_processors.is_authenticated',
-                                                 'wq.db.rest.auth.context_processors.social_auth',
-                                                 'wq.db.rest.context_processors.version',
-                                                 'wq.db.rest.context_processors.router_info',
-                                                 'wq.db.rest.context_processors.wq_config')}}
-             ]
-
-# TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'master_templates')]
-# TEMPLATES[1]['DIRS'] = [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'master_templates')]
+TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'master_templates')]
+TEMPLATES[1]['DIRS'] = [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'master_templates')]
 
 # wq: Recommended settings unique to wq.db
 from wq.db.default_settings import (
