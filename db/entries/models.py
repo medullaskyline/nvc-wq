@@ -69,7 +69,7 @@ class FeelingsNeedsEntry(BaseEntry):
     feeling = models.ForeignKey(Feeling)
     need = models.ForeignKey(Need)
     notes = models.TextField(blank=True)
-    public = models.CharField(default='false', choices=(
+    public = models.CharField(default='FALSE', choices=(
       ('FALSE', 'false'), ('TRUE', 'true')
     ), max_length=5)
 
