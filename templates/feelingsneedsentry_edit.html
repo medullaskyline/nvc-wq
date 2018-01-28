@@ -71,15 +71,19 @@
               </select>
               <p class='error feelingsneedsentry-need_id-errors'></p>
             </li>
-
             <li class="ui-field-contain">
               <label for='feelingsneedsentry-notes'>Notes</label>
               <textarea id='feelingsneedsentry-notes' name='notes' data-xform-type="text">{{notes}}</textarea>
               <p class='error feelingsneedsentry-notes-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='feelingsneedsentry-public'>Public</label>
-              <input id='feelingsneedsentry-public' type='checkbox' data-xform-type='boolean' name='public' value="{{public}}" {{#public}}checked{{/public}}>
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                <legend>Public</legend>
+                {{#public_choices}}
+                <input type='radio' id='feelingsneedsentry-public-{{name}}' name='public' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='feelingsneedsentry-public-{{name}}'>{{label}}</label>
+                {{/public_choices}}
+              </fieldset>
               <p class='error feelingsneedsentry-public-errors'></p>
             </li>
             <li>

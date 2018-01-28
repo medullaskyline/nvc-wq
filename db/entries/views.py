@@ -1,14 +1,9 @@
 from wq.db.rest.views import ModelViewSet
-from django.contrib.auth.models import User
 from django.db.models.fields import FieldDoesNotExist
-# from django.contrib.auth.mixins import LoginRequiredMixin
 from rest_framework.decorators import detail_route
 
-from wq.db.rest.model_tools import get_ct, get_object_id, get_by_identifier
+from wq.db.rest.model_tools import get_by_identifier
 from rest_framework.response import Response
-from rest_framework import status
-
-# from .models import Feeling, Need, FeelingsNeedsEntry
 
 
 class FeelingsNeedsEntryViewSet(ModelViewSet):
@@ -28,6 +23,7 @@ class FeelingsNeedsEntryViewSet(ModelViewSet):
             return response
         serializer = self.get_serializer(obj)
         serializer.add_lookups(response.data)
+        serializer.add_checked(response.data)
         return response
 
     def new(self, request):

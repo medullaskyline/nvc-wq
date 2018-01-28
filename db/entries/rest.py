@@ -1,9 +1,9 @@
 from wq.db import rest
-from django.contrib.auth.models import User, Group, Permission
+from django.contrib.auth.models import User
 
 from .models import Feeling, Need, FeelingsNeedsEntry
-from .views import FeelingsNeedsEntryViewSet
 from .serializers import FeelingsNeedsEntrySerializer, user_form
+from .views import FeelingsNeedsEntryViewSet
 
 
 def filter_entries(queryset, request):
@@ -21,16 +21,6 @@ def filter_users(queryset, request):
         return queryset.filter(pk=request.user.id)
     return queryset.filter(pk=0)
 
-'''
- register_model has parameters
- viewset=None, serializer=None, fields=None, queryset=None, filter=None, cache_filter=None
- url=[Model]._meta.verbose_name_plural
- queryset=[Model].objects.all()
- serializer=wq.db.rest.serializers.ModelSerializer -- one of fields or serializer must be set
- # todo: custom serializer so Public can be a boolean
- and add boolean to serializer's xlsformtypes: OrderedDict([(<class 'rest_framework.fields.ImageField'>, 'image'), (<class 'rest_framework.fields.FileField'>, 'binary'), (<class 'rest_framework.fields.DateField'>, 'date'), (<class 'rest_framework.fields.DateTimeField'>, 'dateTime'), (<class 'rest_framework.fields.FloatField'>, 'decimal'), (<class 'wq.db.rest.serializers.GeometryField'>, 'geoshape'), (<class 'rest_framework.fields.IntegerField'>, 'int'), (<class 'rest_framework.fields.CharField'>, 'string'), (<class 'rest_framework.fields.ChoiceField'>, 'select one'), (<class 'rest_framework.fields.TimeField'>, 'time')])
-or filter with custom filtering function
-'''
 rest.router.register_model(
     Feeling,
     fields="__all__",
@@ -42,7 +32,7 @@ rest.router.register_model(
 rest.router.register_model(
     FeelingsNeedsEntry,
     fields="__all__",
-    # viewset=FeelingsNeedsEntryViewSet, # disabling bc it doesn't prevent ppl from adding entries with other ppl's user ids
+    viewset=FeelingsNeedsEntryViewSet, # disabling bc it doesn't prevent ppl from adding entries with other ppl's user ids
     filter=filter_entries,
     cache_filter=filter_entries,  # wq configuration
     my_custom_flag=True,  # Custom configuration
@@ -53,8 +43,7 @@ rest.router.register_model(
     fields=['username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'last_login', 'date_joined'],
     filter=filter_users,
     cache_filter=filter_users,
-    my_custom_flag=True,  # Custom configuration
-    # serializer=UserSerializer,
+    my_custom_flag=True,
     lookup="username",
     can_add=False,
     form=user_form,

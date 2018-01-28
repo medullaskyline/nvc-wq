@@ -69,7 +69,9 @@ class FeelingsNeedsEntry(BaseEntry):
     feeling = models.ForeignKey(Feeling)
     need = models.ForeignKey(Need)
     notes = models.TextField(blank=True)
-    public = models.BooleanField(default=False)
+    public = models.CharField(default='false', choices=(
+      ('FALSE', 'false'), ('TRUE', 'true')
+    ), max_length=5)
 
     class Meta:
         verbose_name = 'feelings-needs entry'
