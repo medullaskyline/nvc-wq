@@ -4,88 +4,8 @@ from django.forms import Textarea
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 
-from .models import Feeling, Need, FeelingsNeedsEntry, Entry, NeedCategory, NeedLeaf, FeelingMainCategory, \
-    FeelingSubCategory, FeelingLeaf
+from .models import Entry, NeedCategory, NeedLeaf, FeelingMainCategory, FeelingSubCategory, FeelingLeaf
 
-
-@admin.register(Feeling)
-class FeelingAdmin(admin.ModelAdmin):
-    can_delete = False
-    readonly_fields = ('name',)
-
-
-@admin.register(Need)
-class NeedAdmin(admin.ModelAdmin):
-    can_delete = False
-
-
-'''
-classes and functions for FeelingsNeedsEntry
-'''
-
-
-class FeelingsNeedsEntryInline(admin.TabularInline):
-    model = FeelingsNeedsEntry
-    can_delete = False
-    readonly_fields = ('created_at',)
-    formfield_overrides = {
-        models.TextField: {'widget': Textarea(attrs={'rows': 1, 'cols': 40})},
-    }
-    fieldsets = (
-        (None, {'fields': ('created_at', 'feeling', 'need', 'notes', 'public'),
-                'classes': ('collapse', 'extrapretty',)}  # collapse doesn't work for inlines
-         ),
-    )
-    extra = 0
-
-
-def make_entry_public(modeladmin, request, queryset):
-    queryset.update(public=True)
-
-
-make_entry_public.short_description = 'Make selected entries public'
-
-
-def make_entry_private(modeladmin, request, queryset):
-    queryset.update(public=False)
-
-
-make_entry_private.short_description = 'Make selected entries private'
-
-
-@admin.register(FeelingsNeedsEntry)
-class FeelingsNeedsEntryAdmin(admin.ModelAdmin):
-    fieldsets = (
-        ('Person', {'fields': ('user', 'created_at')}),
-        ('Entry', {'fields': ('feeling', 'need', 'notes', 'public')})
-    )
-    list_display = [
-        'user',
-        'created_at',
-        'feeling',
-        'need',
-        'public'
-    ]
-    readonly_fields = [
-        # 'user',
-        'created_at']
-    ordering = ('user', 'created_at',)
-    actions = [make_entry_public, make_entry_private]
-
-
-class EntryInline(admin.TabularInline):
-    model = Entry
-    can_delete = False
-    readonly_fields = ('created_at',)
-    formfield_overrides = {
-        models.TextField: {'widget': Textarea(attrs={'rows': 1, 'cols': 40})},
-    }
-    fieldsets = (
-        (None, {'fields': ('created_at', 'feeling_main_category', 'feeling_sub_category', 'feeling', 'need_category', 'need', 'notes', 'public'),
-                'classes': ('collapse', 'extrapretty',)}  # collapse doesn't work for inlines
-         ),
-    )
-    extra = 0
 
 """
 classes and functions for Feelings
@@ -113,7 +33,7 @@ class FeelingSubCategoryInline(admin.TabularInline):
     can_delete = False
     readonly_fields = ('feeling_main_category', 'feeling_sub_category')
     fieldsets = (
-        (None, {'fields': ('feeling_main_category',  'feeling_sub_category')}),
+        (None, {'fields': ('feeling_main_category', 'feeling_sub_category')}),
     )
     extra = 0
 
@@ -126,7 +46,7 @@ class FeelingSubCategoryInline(admin.TabularInline):
 
 @admin.register(FeelingMainCategory)
 class FeelingMainCategoryAdmin(admin.ModelAdmin):
-    list_display = ('feeling_main_categories', 'feeling_sub_categories', 'feeling_leaves',)  # 'main_feeling')
+    list_display = ('feeling_main_categories', 'feeling_sub_categories', 'feeling_leaves',)
     list_display_links = ('feeling_main_categories',)
     inlines = [FeelingSubCategoryInline, FeelingLeafInline]
     readonly_fields = ['feeling_main_category']
@@ -149,7 +69,7 @@ class FeelingMainCategoryAdmin(admin.ModelAdmin):
 
 
 '''
-#classes and functions for Needs
+classes and functions for Needs
 '''
 
 
@@ -190,6 +110,42 @@ class NeedCategoryAdmin(admin.ModelAdmin):
         return False
 
 
+'''
+classes and functions for Entries
+'''
+
+
+def make_entry_public(modeladmin, request, queryset):
+    queryset.update(public=True)
+
+
+make_entry_public.short_description = 'Make selected entries public'
+
+
+def make_entry_private(modeladmin, request, queryset):
+    queryset.update(public=False)
+
+
+make_entry_private.short_description = 'Make selected entries private'
+
+
+class EntryInline(admin.TabularInline):
+    model = Entry
+    can_delete = False
+    readonly_fields = ('created_at',)
+    formfield_overrides = {
+        models.TextField: {'widget': Textarea(attrs={'rows': 1, 'cols': 40})},
+    }
+    fieldsets = (
+        (None, {'fields': (
+            'created_at', 'feeling_main_category', 'feeling_sub_category', 'feeling', 'need_category', 'need', 'notes',
+            'public'),
+            'classes': ('collapse', 'extrapretty',)}  # collapse doesn't work for inlines
+         ),
+    )
+    extra = 0
+
+
 @admin.register(Entry)
 class EntryAdmin(admin.ModelAdmin):
     fieldsets = (
@@ -211,7 +167,6 @@ class EntryAdmin(admin.ModelAdmin):
         'created_at']
     ordering = ('user', 'created_at',)
     actions = [make_entry_public, make_entry_private]
-
 
 
 '''
