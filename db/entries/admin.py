@@ -73,9 +73,23 @@ class FeelingsNeedsEntryAdmin(admin.ModelAdmin):
     actions = [make_entry_public, make_entry_private]
 
 
+class EntryInline(admin.TabularInline):
+    model = Entry
+    can_delete = False
+    readonly_fields = ('created_at',)
+    formfield_overrides = {
+        models.TextField: {'widget': Textarea(attrs={'rows': 1, 'cols': 40})},
+    }
+    fieldsets = (
+        (None, {'fields': ('created_at', 'feeling_main_category', 'feeling_sub_category', 'feeling', 'need_category', 'need', 'notes', 'public'),
+                'classes': ('collapse', 'extrapretty',)}  # collapse doesn't work for inlines
+         ),
+    )
+    extra = 0
+
 """
 classes and functions for Feelings
-
+"""
 
 
 class FeelingLeafInline(admin.TabularInline):
@@ -94,28 +108,28 @@ class FeelingLeafInline(admin.TabularInline):
         return False
 
 
-# class FeelingSubCategoryInline(admin.TabularInline):
-#     model = FeelingSubCategory
-#     can_delete = False
-#     readonly_fields = ('main_category', 'name')
-#     fieldsets = (
-#         (None, {'fields': ('main_category',  'name')}),
-#     )
-#     extra = 0
-#
-#     def has_add_permission(self, request, obj=None):
-#         return False
-#
-#     def has_delete_permission(self, request, obj=None):
-#         return False
+class FeelingSubCategoryInline(admin.TabularInline):
+    model = FeelingSubCategory
+    can_delete = False
+    readonly_fields = ('feeling_main_category', 'feeling_sub_category')
+    fieldsets = (
+        (None, {'fields': ('feeling_main_category',  'feeling_sub_category')}),
+    )
+    extra = 0
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 
 @admin.register(FeelingMainCategory)
 class FeelingMainCategoryAdmin(admin.ModelAdmin):
     list_display = ('feeling_main_categories', 'feeling_sub_categories', 'feeling_leaves',)  # 'main_feeling')
     list_display_links = ('feeling_main_categories',)
-    inlines = [FeelingLeafInline]
-    readonly_fields = ['feeling_leaves']
+    inlines = [FeelingSubCategoryInline, FeelingLeafInline]
+    readonly_fields = ['feeling_main_category']
     can_delete = False
 
     def feeling_main_categories(self, obj):
@@ -124,7 +138,7 @@ class FeelingMainCategoryAdmin(admin.ModelAdmin):
     def feeling_sub_categories(self, obj):
         return ', '.join([sc.name for sc in obj.feelingsubcategory_set.all()])
 
-    def names(self, obj):
+    def feeling_leaves(self, obj):
         return ', '.join([feel.name for feel in obj.feelingleaf_set.all()])
 
     def has_add_permission(self, request, obj=None):
@@ -160,13 +174,13 @@ class NeedCategoryAdmin(admin.ModelAdmin):
     list_display = ('need_categories', 'need_leaves',)  # 'main_feeling')
     list_display_links = ('need_categories',)
     inlines = [NeedLeafInline]
-    readonly_fields = ['need_leaf']
+    readonly_fields = ['need_category']
     can_delete = False
 
-    def categories(self, obj):
+    def need_categories(self, obj):
         return obj.name
 
-    def names(self, obj):
+    def need_leaves(self, obj):
         return ', '.join([need.name for need in obj.needleaf_set.all()])
 
     def has_add_permission(self, request, obj=None):
@@ -198,7 +212,7 @@ class EntryAdmin(admin.ModelAdmin):
     ordering = ('user', 'created_at',)
     actions = [make_entry_public, make_entry_private]
 
-"""
+
 
 '''
 Modified User admin
@@ -206,7 +220,7 @@ Modified User admin
 
 
 class ExtendedUserAdmin(UserAdmin):
-    inlines = [FeelingsNeedsEntryInline]
+    inlines = [EntryInline]
     readonly_fields = ('last_login', 'date_joined',)
     fieldsets = (
         (None, {'fields': (('username', 'date_joined', 'last_login',), 'password')}),

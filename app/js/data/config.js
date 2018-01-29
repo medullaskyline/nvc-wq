@@ -8,115 +8,6 @@ define({
             "url": "logout",
             "name": "logout"
         },
-        "needcategory": {
-            "children": [
-                {
-                    "name": "need",
-                    "label": "Need",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "needleaf"
-                }
-            ],
-            "name": "needcategory",
-            "url": "needcategorys",
-            "list": true,
-            "form": []
-        },
-        "feelingmaincategory": {
-            "name": "feelingmaincategory",
-            "url": "feelingmaincategorys",
-            "list": true,
-            "form": []
-        },
-        "entry": {
-            "my_custom_flag": true,
-            "cache": "filter",
-            "name": "entry",
-            "url": "entries",
-            "list": true,
-            "form": [
-                {
-                    "name": "user",
-                    "label": "User",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "user"
-                },
-                {
-                    "name": "feeling",
-                    "label": "Feeling",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "feelingleaf"
-                },
-                {
-                    "name": "need_category",
-                    "label": "Need Category",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "needcategory"
-                },
-                {
-                    "name": "notes",
-                    "label": "Notes",
-                    "type": "text"
-                },
-                {
-                    "name": "public",
-                    "label": "Public",
-                    "choices": [
-                        {
-                            "name": "FALSE",
-                            "label": "false"
-                        },
-                        {
-                            "name": "TRUE",
-                            "label": "true"
-                        }
-                    ],
-                    "type": "select one"
-                }
-            ]
-        },
-        "feeling": {
-            "name": "feeling",
-            "url": "feelings",
-            "list": true,
-            "form": []
-        },
-        "feelingleaf": {
-            "name": "feelingleaf",
-            "url": "feelingleafs",
-            "list": true,
-            "form": []
-        },
-        "need": {
-            "name": "need",
-            "url": "needs",
-            "list": true,
-            "form": []
-        },
-        "feelingsubcategory": {
-            "name": "feelingsubcategory",
-            "url": "feelingsubcategorys",
-            "list": true,
-            "form": []
-        },
-        "needleaf": {
-            "name": "needleaf",
-            "url": "needleafs",
-            "list": true,
-            "form": []
-        },
         "feelingsneedsentry": {
             "my_custom_flag": true,
             "cache": "filter",
@@ -172,6 +63,30 @@ define({
                     "type": "select one"
                 }
             ]
+        },
+        "feeling": {
+            "name": "feeling",
+            "url": "feelings",
+            "list": true,
+            "form": []
+        },
+        "feelingleaf": {
+            "name": "feelingleaf",
+            "url": "feelingleafs",
+            "list": true,
+            "form": []
+        },
+        "need": {
+            "name": "need",
+            "url": "needs",
+            "list": true,
+            "form": []
+        },
+        "needleaf": {
+            "name": "needleaf",
+            "url": "needleafs",
+            "list": true,
+            "form": []
         },
         "user": {
             "my_custom_flag": true,
@@ -243,6 +158,118 @@ define({
                     "type": "dateTime"
                 }
             ]
+        },
+        "feelingmaincategory": {
+            "name": "feelingmaincategory",
+            "url": "FeelingCategories",
+            "list": true,
+            "form": []
+        },
+        "entry": {
+            "my_custom_flag": true,
+            "cache": "filter",
+            "name": "entry",
+            "url": "entries",
+            "list": true,
+            "form": [
+                {
+                    "name": "user",
+                    "label": "User",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "user"
+                },
+                {
+                    "name": "feeling_main_category",
+                    "label": "Feeling Main Category",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "feelingmaincategory"
+                },
+                {
+                    "name": "feeling_sub_category",
+                    "label": "Feeling Sub Category",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "feelingsubcategory"
+                },
+                {
+                    "name": "feeling",
+                    "label": "Feeling",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "feelingleaf"
+                },
+                {
+                    "name": "need_category",
+                    "label": "Need Category",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "needcategory"
+                },
+                {
+                    "name": "need",
+                    "label": "Need",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "needleaf"
+                },
+                {
+                    "name": "notes",
+                    "label": "Notes",
+                    "type": "text"
+                },
+                {
+                    "name": "public",
+                    "label": "Public",
+                    "choices": [
+                        {
+                            "name": "FALSE",
+                            "label": "false"
+                        },
+                        {
+                            "name": "TRUE",
+                            "label": "true"
+                        }
+                    ],
+                    "type": "select one"
+                }
+            ]
+        },
+        "feelingsubcategory": {
+            "name": "feelingsubcategory",
+            "url": "FeelingSubcategories",
+            "list": true,
+            "form": []
+        },
+        "needcategory": {
+            "children": [
+                {
+                    "name": "need",
+                    "label": "Need",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "needleaf"
+                }
+            ],
+            "name": "needcategory",
+            "url": "NeedCategories",
+            "list": true,
+            "form": []
         }
     }
 });

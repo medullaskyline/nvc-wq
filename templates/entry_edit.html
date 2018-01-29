@@ -48,6 +48,30 @@
               <p class='error entry-user_id-errors'></p>
             </li>
             <li class="ui-field-contain">
+              <label for='entry-feeling_main_category_id'>Feeling Main Category</label>
+              <select id='entry-feeling_main_category_id' data-xform-type='string' name='feeling_main_category_id' required>
+                <option value="">Select one...</option>
+                {{#feeling_main_category_list}}
+                <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                 {{#outbox}}*{{/outbox}} {{label}}
+                </option>
+                {{/feeling_main_category_list}}
+              </select>
+              <p class='error entry-feeling_main_category_id-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='entry-feeling_sub_category_id'>Feeling Sub Category</label>
+              <select id='entry-feeling_sub_category_id' data-xform-type='string' name='feeling_sub_category_id' required>
+                <option value="">Select one...</option>
+                {{#feeling_sub_category_list}}
+                <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                 {{#outbox}}*{{/outbox}} {{label}}
+                </option>
+                {{/feeling_sub_category_list}}
+              </select>
+              <p class='error entry-feeling_sub_category_id-errors'></p>
+            </li>
+            <li class="ui-field-contain">
               <label for='entry-feeling_id'>Feeling</label>
               <select id='entry-feeling_id' data-xform-type='string' name='feeling_id' required>
                 <option value="">Select one...</option>
@@ -70,6 +94,18 @@
                 {{/need_category_list}}
               </select>
               <p class='error entry-need_category_id-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='entry-need_id'>Need</label>
+              <select id='entry-need_id' data-xform-type='string' name='need_id' required>
+                <option value="">Select one...</option>
+                {{#need_list}}
+                <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                 {{#outbox}}*{{/outbox}} {{label}}
+                </option>
+                {{/need_list}}
+              </select>
+              <p class='error entry-need_id-errors'></p>
             </li>
             <li class="ui-field-contain">
               <label for='entry-notes'>Notes</label>
