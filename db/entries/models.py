@@ -32,7 +32,7 @@ def get_feelings_choices(main_category):
 
 
 ALL_FEELING_CHOICES = get_feelings_choices('emotional') + get_feelings_choices('mental') + get_feelings_choices(
-    'physical')
+        'physical')
 All_NEED_CHOICES = get_need_choices()
 
 
@@ -51,7 +51,7 @@ class FeelingMainCategory(models.Model):
         return self.feeling_main_category
 
     class Meta:
-        verbose_name_plural = "Feeling Categories"
+        verbose_name_plural = "Feeling Main Categories"
 
 
 class FeelingSubCategory(models.Model):
@@ -73,8 +73,8 @@ class FeelingLeaf(models.Model):
     def __str__(self):
         return self.feeling_leaf
 
-    # class Meta:
-        # verbose_name_plural = ""
+    class Meta:
+        verbose_name_plural = "Feeling Leaves"
 
 
 class NeedCategory(models.Model):
@@ -94,10 +94,18 @@ class NeedLeaf(models.Model):
     def __str__(self):
         return self.need_leaf
 
+    class Meta:
+        verbose_name_plural = "Need Leaves"
+
 
 class Entry(BaseEntry):
     feeling_main_category = models.ForeignKey(FeelingMainCategory)
-    feeling_sub_category = models.ForeignKey(FeelingSubCategory)
+    feeling_sub_category = ChainedForeignKey(FeelingSubCategory,
+                                             chained_field="feeling_main_category",
+                                             chained_model_field="feeling_main_category",
+                                             show_all=False,
+                                             auto_choose=True,
+                                             sort=True)
     feeling = ChainedForeignKey(FeelingLeaf,
                                 chained_field="feeling_sub_category",
                                 chained_model_field="feeling_sub_category",
@@ -125,7 +133,7 @@ class Entry(BaseEntry):
 
 
 """
-older models
+older models, deprecated
 """
 
 
