@@ -57,13 +57,15 @@
               <p class='error user-email-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='user-is_staff'>Is Staff</label>
+              <label for='user-is_staff'>Staff status</label>
               <input id='user-is_staff' type='checkbox' data-xform-type='boolean' name='is_staff' value="{{is_staff}}" {{#is_staff}}checked{{/is_staff}}>
+              <p class="hint">Designates whether the user can log into this admin site.</p>
               <p class='error user-is_staff-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='user-is_active'>Is Active</label>
+              <label for='user-is_active'>Active</label>
               <input id='user-is_active' type='checkbox' data-xform-type='boolean' name='is_active' value="{{is_active}}" {{#is_active}}checked{{/is_active}}>
+              <p class="hint">Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</p>
               <p class='error user-is_active-errors'></p>
             </li>
             <li class="ui-field-contain">

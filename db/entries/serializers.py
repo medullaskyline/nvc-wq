@@ -1,27 +1,86 @@
 from wq.db.rest.serializers import ModelSerializer
+from wq.db.patterns import serializers as patterns
 from rest_framework import serializers
+from rest_framework.utils import model_meta
+
+from .models import FeelingLeaf
 
 
 class FeelingsNeedsEntrySerializer(ModelSerializer):
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.xlsform_types[serializers.BooleanField] = 'boolean'
-        # self.serializers.ChoiceField is already the key for 'select one'
-
     class Meta:
-        # this adds to the configuration set in the rest.router.register_model
         wq_field_config = {
             'public': {'type': 'select one'}
         }
 
 
+class EntrySerializer(ModelSerializer):
+    class Meta:
+        wq_field_config = {
+            'public': {'type': 'select one'},
+            "feeling": {"wq:ForeignKey": "feelingleaf"},
+            "need category": {"children": [
+                {
+                    "name": "need",
+                    "label": "Need",
+                    "bind": {
+                        "required": True
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "needleaf"
+                },
+            ]},
+            # "need": {"wq:ForeignKey": "needleaf"}
+        }
+
+
+# class FeelingSerializer(patterns.AttachmentSerializer):
+#
+#     class Meta(patterns.AttachmentSerializer.Meta):
+#         model = FeelingLeaf
+#         exclude = ('FeelingSubCategory',)
+#         object_field = 'FeelingSubCategory'
+
 
 class UserSerializer(ModelSerializer):
-    pass
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.xlsform_types[serializers.BooleanField] = 'boolean'
 
+    # overriding to prevent permissions and groups
+    # or just exclude = ('groups', 'permissions') in Meta?
+    def get_label_fields(self, default_fields):
+        if not self.add_label_fields:
+            return {}
+        fields = {}
 
-user_form = [
+        exclude = getattr(self.Meta, 'exclude', [])
+        if 'label' not in exclude and 'label' not in default_fields:
+            fields['label'] = serializers.ReadOnlyField(source='__str__')
+
+        info = model_meta.get_field_info(self.Meta.model)
+
+        # Add labels for dates and fields with choices
+        for name, field in info.fields.items():
+            if name in getattr(self.Meta, "exclude", []):
+                continue
+            if name + '_label' in default_fields:
+                continue
+            if field.choices:
+                fields[name + '_label'] = serializers.ReadOnlyField(
+                        source='get_%s_display' % name
+                )
+
+        return fields
+
+    class Meta:
+        wq_field_config = {
+            'is_staff': {'type': 'boolean'},
+            'is_active': {'type': 'boolean'}
+        }
+        wq_config = {
+            "fields": ['username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'last_login',
+                       'date_joined'],
+            "form": [
                 {
                     "name": "username",
                     "label": "Username",
@@ -72,3 +131,4 @@ user_form = [
                     "type": "dateTime"
                 }
             ]
+        }

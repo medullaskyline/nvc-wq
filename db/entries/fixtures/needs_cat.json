@@ -1,0 +1,65 @@
+[
+    {
+        "model": "entries.NeedCategory",
+        "pk": 1,
+        "fields": {
+            "need_category": "subsistence"
+        }
+    },
+    {
+        "model": "entries.NeedCategory",
+        "pk": 2,
+        "fields": {
+            "need_category": "protection"
+        }
+    },
+    {
+        "model": "entries.NeedCategory",
+        "pk": 3,
+        "fields": {
+            "need_category": "love"
+        }
+    },
+    {
+        "model": "entries.NeedCategory",
+        "pk": 4,
+        "fields": {
+            "need_category": "understanding"
+        }
+    },
+    {
+        "model": "entries.NeedCategory",
+        "pk": 5,
+        "fields": {
+            "need_category": "community"
+        }
+    },
+    {
+        "model": "entries.NeedCategory",
+        "pk": 6,
+        "fields": {
+            "need_category": "freedom"
+        }
+    },
+    {
+        "model": "entries.NeedCategory",
+        "pk": 7,
+        "fields": {
+            "need_category": "creativity"
+        }
+    },
+    {
+        "model": "entries.NeedCategory",
+        "pk": 8,
+        "fields": {
+            "need_category": "meaning/purpose"
+        }
+    },
+    {
+        "model": "entries.NeedCategory",
+        "pk": 9,
+        "fields": {
+            "need_category": "rest"
+        }
+    }
+]

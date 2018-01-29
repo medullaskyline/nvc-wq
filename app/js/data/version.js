@@ -1,1 +1,1 @@
-define(function(){return "1.1";});
+define(function(){return "2";});

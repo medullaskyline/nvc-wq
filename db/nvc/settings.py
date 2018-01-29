@@ -43,10 +43,9 @@ INSTALLED_APPS = [
 
     # Uncomment to enable python-social-auth
     # 'social.apps.django_app.default',
-    'rest_framework',
-
     'wq.db.rest',
     'wq.db.rest.auth',
+    'smart_selects',
 
     # Project apps
     'entries',
@@ -148,3 +147,5 @@ except ImportError:
 import sys
 
 DEBUG_WITH_RUNSERVER = 'manage.py' in sys.argv[0]
+
+# JQUERY_URL = ''

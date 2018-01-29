@@ -1,0 +1,802 @@
+[
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 1,
+        "fields": {
+            "need_leaf": "air",
+            "need_category": 1
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 2,
+        "fields": {
+            "need_leaf": "food",
+            "need_category": 1
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 3,
+        "fields": {
+            "need_leaf": "movement/exercise",
+            "need_category": 1
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 4,
+        "fields": {
+            "need_leaf": "sleep",
+            "need_category": 1
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 5,
+        "fields": {
+            "need_leaf": "shelter",
+            "need_category": 1
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 6,
+        "fields": {
+            "need_leaf": "water",
+            "need_category": 1
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 7,
+        "fields": {
+            "need_leaf": "safety",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 8,
+        "fields": {
+            "need_leaf": "security",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 9,
+        "fields": {
+            "need_leaf": "stability",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 10,
+        "fields": {
+            "need_leaf": "predictability",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 11,
+        "fields": {
+            "need_leaf": "consistency",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 12,
+        "fields": {
+            "need_leaf": "trust",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 13,
+        "fields": {
+            "need_leaf": "reassurance",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 14,
+        "fields": {
+            "need_leaf": "peace",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 15,
+        "fields": {
+            "need_leaf": "communion",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 16,
+        "fields": {
+            "need_leaf": "ease",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 17,
+        "fields": {
+            "need_leaf": "hope",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 18,
+        "fields": {
+            "need_leaf": "healing",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 19,
+        "fields": {
+            "need_leaf": "harmony",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 20,
+        "fields": {
+            "need_leaf": "comfort",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 21,
+        "fields": {
+            "need_leaf": "order",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 22,
+        "fields": {
+            "need_leaf": "structure",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 23,
+        "fields": {
+            "need_leaf": "honesty",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 24,
+        "fields": {
+            "need_leaf": "authenticity",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 25,
+        "fields": {
+            "need_leaf": "integrity",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 26,
+        "fields": {
+            "need_leaf": "wholeness",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 27,
+        "fields": {
+            "need_leaf": "fairness",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 28,
+        "fields": {
+            "need_leaf": "justice",
+            "need_category": 2
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 29,
+        "fields": {
+            "need_leaf": "connection",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 30,
+        "fields": {
+            "need_leaf": "acceptance",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 31,
+        "fields": {
+            "need_leaf": "affection",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 32,
+        "fields": {
+            "need_leaf": "appreciation",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 33,
+        "fields": {
+            "need_leaf": "communication",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 34,
+        "fields": {
+            "need_leaf": "closeness",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 35,
+        "fields": {
+            "need_leaf": "companionship",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 36,
+        "fields": {
+            "need_leaf": "compassion",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 37,
+        "fields": {
+            "need_leaf": "consideration",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 38,
+        "fields": {
+            "need_leaf": "intimacy",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 39,
+        "fields": {
+            "need_leaf": "mutuality",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 40,
+        "fields": {
+            "need_leaf": "nurturing",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 41,
+        "fields": {
+            "need_leaf": "respect",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 42,
+        "fields": {
+            "need_leaf": "self-respect",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 43,
+        "fields": {
+            "need_leaf": "self-esteem",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 44,
+        "fields": {
+            "need_leaf": "touch",
+            "need_category": 3
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 45,
+        "fields": {
+            "need_leaf": "empathy",
+            "need_category": 4
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 46,
+        "fields": {
+            "need_leaf": "support",
+            "need_category": 4
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 47,
+        "fields": {
+            "need_leaf": "to know and be known",
+            "need_category": 4
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 48,
+        "fields": {
+            "need_leaf": "to see/hear and be seen/heard",
+            "need_category": 4
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 49,
+        "fields": {
+            "need_leaf": "to understand and be understood",
+            "need_category": 4
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 50,
+        "fields": {
+            "need_leaf": "be understood",
+            "need_category": 4
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 51,
+        "fields": {
+            "need_leaf": "honor",
+            "need_category": 4
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 52,
+        "fields": {
+            "need_leaf": "respect",
+            "need_category": 4
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 53,
+        "fields": {
+            "need_leaf": "information",
+            "need_category": 4
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 54,
+        "fields": {
+            "need_leaf": "clarity",
+            "need_category": 4
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 55,
+        "fields": {
+            "need_leaf": "equality",
+            "need_category": 5
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 56,
+        "fields": {
+            "need_leaf": "family",
+            "need_category": 5
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 57,
+        "fields": {
+            "need_leaf": "mutuality",
+            "need_category": 5
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 58,
+        "fields": {
+            "need_leaf": "friendship",
+            "need_category": 5
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 59,
+        "fields": {
+            "need_leaf": "support",
+            "need_category": 5
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 60,
+        "fields": {
+            "need_leaf": "collaboration",
+            "need_category": 5
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 61,
+        "fields": {
+            "need_leaf": "acknowledgment",
+            "need_category": 5
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 62,
+        "fields": {
+            "need_leaf": "cooperation",
+            "need_category": 5
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 63,
+        "fields": {
+            "need_leaf": "partnership",
+            "need_category": 5
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 64,
+        "fields": {
+            "need_leaf": "belonging",
+            "need_category": 5
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 65,
+        "fields": {
+            "need_leaf": "inclusion",
+            "need_category": 5
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 66,
+        "fields": {
+            "need_leaf": "choice",
+            "need_category": 6
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 67,
+        "fields": {
+            "need_leaf": "autonomy",
+            "need_category": 6
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 68,
+        "fields": {
+            "need_leaf": "spontaneity",
+            "need_category": 6
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 69,
+        "fields": {
+            "need_leaf": "independence",
+            "need_category": 6
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 70,
+        "fields": {
+            "need_leaf": "assertiveness",
+            "need_category": 6
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 71,
+        "fields": {
+            "need_leaf": "differentiation",
+            "need_category": 6
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 72,
+        "fields": {
+            "need_leaf": "learning",
+            "need_category": 7
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 73,
+        "fields": {
+            "need_leaf": "discovery",
+            "need_category": 7
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 74,
+        "fields": {
+            "need_leaf": "self-expression",
+            "need_category": 7
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 75,
+        "fields": {
+            "need_leaf": "stimulation",
+            "need_category": 7
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 76,
+        "fields": {
+            "need_leaf": "growth",
+            "need_category": 7
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 77,
+        "fields": {
+            "need_leaf": "celebration of life",
+            "need_category": 7
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 78,
+        "fields": {
+            "need_leaf": "inspiration",
+            "need_category": 7
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 79,
+        "fields": {
+            "need_leaf": "participation",
+            "need_category": 8
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 80,
+        "fields": {
+            "need_leaf": "challenge",
+            "need_category": 8
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 81,
+        "fields": {
+            "need_leaf": "competence",
+            "need_category": 8
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 82,
+        "fields": {
+            "need_leaf": "consciousness",
+            "need_category": 8
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 83,
+        "fields": {
+            "need_leaf": "contribution",
+            "need_category": 8
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 84,
+        "fields": {
+            "need_leaf": "efficacy",
+            "need_category": 8
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 85,
+        "fields": {
+            "need_leaf": "effectiveness",
+            "need_category": 8
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 86,
+        "fields": {
+            "need_leaf": "focus",
+            "need_category": 8
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 87,
+        "fields": {
+            "need_leaf": "hope",
+            "need_category": 8
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 88,
+        "fields": {
+            "need_leaf": "to matter",
+            "need_category": 8
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 89,
+        "fields": {
+            "need_leaf": "play",
+            "need_category": 9
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 90,
+        "fields": {
+            "need_leaf": "joy",
+            "need_category": 9
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 91,
+        "fields": {
+            "need_leaf": "humor",
+            "need_category": 9
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 92,
+        "fields": {
+            "need_leaf": "expression",
+            "need_category": 9
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 93,
+        "fields": {
+            "need_leaf": "aliveness",
+            "need_category": 9
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 94,
+        "fields": {
+            "need_leaf": "beauty",
+            "need_category": 9
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 95,
+        "fields": {
+            "need_leaf": "celebration",
+            "need_category": 9
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 96,
+        "fields": {
+            "need_leaf": "mourning",
+            "need_category": 9
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 97,
+        "fields": {
+            "need_leaf": "leisure",
+            "need_category": 9
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 98,
+        "fields": {
+            "need_leaf": "awareness",
+            "need_category": 9
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 99,
+        "fields": {
+            "need_leaf": "presence",
+            "need_category": 9
+        }
+    },
+    {
+        "model": "entries.NeedLeaf",
+        "pk": 100,
+        "fields": {
+            "need_leaf": "groundedness",
+            "need_category": 9
+        }
+    }
+]

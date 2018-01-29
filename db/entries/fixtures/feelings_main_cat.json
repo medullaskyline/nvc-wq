@@ -1,0 +1,23 @@
+[
+    {
+        "model": "entries.FeelingMainCategory",
+        "pk": 1,
+        "fields": {
+            "feeling_main_category": "emotional"
+        }
+    },
+    {
+        "model": "entries.FeelingMainCategory",
+        "pk": 2,
+        "fields": {
+            "feeling_main_category": "mental"
+        }
+    },
+    {
+        "model": "entries.FeelingMainCategory",
+        "pk": 3,
+        "fields": {
+            "feeling_main_category": "physical"
+        }
+    }
+]

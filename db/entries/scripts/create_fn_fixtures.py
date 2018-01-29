@@ -1,8 +1,7 @@
 import os
 import csv
 import json
-# import yaml
-from copy import copy, deepcopy
+from copy import deepcopy
 
 os.environ["DJANGO_SETTINGS_MODULE"] = "nvc.settings"
 

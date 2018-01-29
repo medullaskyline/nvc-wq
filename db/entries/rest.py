@@ -1,8 +1,10 @@
 from wq.db import rest
 from django.contrib.auth.models import User
 
-from .models import Feeling, Need, FeelingsNeedsEntry
-from .serializers import FeelingsNeedsEntrySerializer, user_form
+from .models import (Feeling, Need, FeelingsNeedsEntry, FeelingLeaf,
+                     NeedLeaf, Entry, FeelingSubCategory, FeelingMainCategory,
+                    NeedCategory)
+from .serializers import FeelingsNeedsEntrySerializer, UserSerializer, EntrySerializer
 from .views import FeelingsNeedsEntryViewSet
 
 
@@ -21,6 +23,56 @@ def filter_users(queryset, request):
         return queryset.filter(pk=request.user.id)
     return queryset.filter(pk=0)
 
+
+rest.router.register_model(
+    User,
+    fields=['username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'last_login', 'date_joined'],
+    filter=filter_users,
+    cache_filter=filter_users,
+    my_custom_flag=True,
+    lookup="username",
+    can_add=False,
+    serializer=UserSerializer,
+)
+
+rest.router.register_model(
+    FeelingMainCategory,
+    fields="__all__",
+)
+rest.router.register_model(
+    FeelingSubCategory,
+    fields="__all__",
+)
+rest.router.register_model(
+    FeelingLeaf,
+    fields="__all__",
+)
+rest.router.register_model(
+    NeedCategory,
+    fields="__all__",
+    children=[{
+                    "name": "need",
+                    "label": "Need",
+                    "bind": {
+                        "required": True
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "needleaf"
+                }]
+)
+rest.router.register_model(
+    NeedLeaf,
+    fields="__all__",
+)
+rest.router.register_model(
+    Entry,
+    fields="__all__",
+    filter=filter_entries,
+    cache_filter=filter_entries,
+    my_custom_flag=True,
+    serializer=EntrySerializer,  # this just specifies that public is a choice field
+)
+
 rest.router.register_model(
     Feeling,
     fields="__all__",
@@ -34,20 +86,11 @@ rest.router.register_model(
     fields="__all__",
     viewset=FeelingsNeedsEntryViewSet, # disabling bc it doesn't prevent ppl from adding entries with other ppl's user ids
     filter=filter_entries,
-    cache_filter=filter_entries,  # wq configuration
-    my_custom_flag=True,  # Custom configuration
-    serializer=FeelingsNeedsEntrySerializer,  # this just specifies that public is a boolean
-)
-rest.router.register_model(
-    User,
-    fields=['username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'last_login', 'date_joined'],
-    filter=filter_users,
-    cache_filter=filter_users,
+    cache_filter=filter_entries,
     my_custom_flag=True,
-    lookup="username",
-    can_add=False,
-    form=user_form,
+    serializer=FeelingsNeedsEntrySerializer,  # this just specifies that public is a choice field
 )
+
 
 
 

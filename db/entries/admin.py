@@ -1,12 +1,11 @@
 from django.contrib import admin
 from django.db import models
 from django.forms import Textarea
-from django.contrib.auth.models import User, Permission
+from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
-from django.contrib.contenttypes.models import ContentType
 
-
-from .models import Feeling, Need, FeelingsNeedsEntry
+from .models import Feeling, Need, FeelingsNeedsEntry, Entry, NeedCategory, NeedLeaf, FeelingMainCategory, \
+    FeelingSubCategory, FeelingLeaf
 
 
 @admin.register(Feeling)
@@ -28,7 +27,6 @@ classes and functions for FeelingsNeedsEntry
 class FeelingsNeedsEntryInline(admin.TabularInline):
     model = FeelingsNeedsEntry
     can_delete = False
-    show_change_link = True
     readonly_fields = ('created_at',)
     formfield_overrides = {
         models.TextField: {'widget': Textarea(attrs={'rows': 1, 'cols': 40})},
@@ -74,6 +72,134 @@ class FeelingsNeedsEntryAdmin(admin.ModelAdmin):
     ordering = ('user', 'created_at',)
     actions = [make_entry_public, make_entry_private]
 
+
+"""
+classes and functions for Feelings
+
+
+
+class FeelingLeafInline(admin.TabularInline):
+    model = FeelingLeaf
+    can_delete = False
+    readonly_fields = ('feeling_main_category', 'feeling_sub_category', 'feeling_leaf')
+    fieldsets = (
+        (None, {'fields': ('feeling_main_category', 'feeling_sub_category', 'feeling_leaf')}),
+    )
+    extra = 0
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
+# class FeelingSubCategoryInline(admin.TabularInline):
+#     model = FeelingSubCategory
+#     can_delete = False
+#     readonly_fields = ('main_category', 'name')
+#     fieldsets = (
+#         (None, {'fields': ('main_category',  'name')}),
+#     )
+#     extra = 0
+#
+#     def has_add_permission(self, request, obj=None):
+#         return False
+#
+#     def has_delete_permission(self, request, obj=None):
+#         return False
+
+
+@admin.register(FeelingMainCategory)
+class FeelingMainCategoryAdmin(admin.ModelAdmin):
+    list_display = ('feeling_main_categories', 'feeling_sub_categories', 'feeling_leaves',)  # 'main_feeling')
+    list_display_links = ('feeling_main_categories',)
+    inlines = [FeelingLeafInline]
+    readonly_fields = ['feeling_leaves']
+    can_delete = False
+
+    def feeling_main_categories(self, obj):
+        return obj.name
+
+    def feeling_sub_categories(self, obj):
+        return ', '.join([sc.name for sc in obj.feelingsubcategory_set.all()])
+
+    def names(self, obj):
+        return ', '.join([feel.name for feel in obj.feelingleaf_set.all()])
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
+'''
+#classes and functions for Needs
+'''
+
+
+class NeedLeafInline(admin.TabularInline):
+    model = NeedLeaf
+    can_delete = False
+    readonly_fields = ('need_category', 'need_leaf')
+    fieldsets = (
+        (None, {'fields': ('need_category', 'need_leaf')}),
+    )
+    extra = 0
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
+@admin.register(NeedCategory)
+class NeedCategoryAdmin(admin.ModelAdmin):
+    list_display = ('need_categories', 'need_leaves',)  # 'main_feeling')
+    list_display_links = ('need_categories',)
+    inlines = [NeedLeafInline]
+    readonly_fields = ['need_leaf']
+    can_delete = False
+
+    def categories(self, obj):
+        return obj.name
+
+    def names(self, obj):
+        return ', '.join([need.name for need in obj.needleaf_set.all()])
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
+@admin.register(Entry)
+class EntryAdmin(admin.ModelAdmin):
+    fieldsets = (
+        ('Person', {'fields': ('user', 'created_at')}),
+        ('Entry', {'fields': (
+            'feeling_main_category', 'feeling_sub_category', 'feeling', 'need_category', 'need', 'notes', 'public')})
+    )
+    list_display = [
+        'user',
+        'created_at',
+        'feeling_main_category',
+        'feeling_sub_category',
+        'feeling',
+        'need_category',
+        'need',
+        'public',
+    ]
+    readonly_fields = [
+        'created_at']
+    ordering = ('user', 'created_at',)
+    actions = [make_entry_public, make_entry_private]
+
+"""
+
 '''
 Modified User admin
 '''
@@ -94,5 +220,3 @@ class ExtendedUserAdmin(UserAdmin):
 
 admin.site.unregister(User)
 admin.site.register(User, ExtendedUserAdmin)
-admin.site.register(Permission)
-admin.site.register(ContentType)

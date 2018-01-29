@@ -1,0 +1,122 @@
+[
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 1,
+        "fields": {
+            "feeling_sub_category": "enjoyment",
+            "feeling_main_category": 1
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 2,
+        "fields": {
+            "feeling_sub_category": "sadness",
+            "feeling_main_category": 1
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 3,
+        "fields": {
+            "feeling_sub_category": "fear",
+            "feeling_main_category": 1
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 4,
+        "fields": {
+            "feeling_sub_category": "anger",
+            "feeling_main_category": 1
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 5,
+        "fields": {
+            "feeling_sub_category": "disgust",
+            "feeling_main_category": 1
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 6,
+        "fields": {
+            "feeling_sub_category": "connected",
+            "feeling_main_category": 2
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 7,
+        "fields": {
+            "feeling_sub_category": "grasping",
+            "feeling_main_category": 2
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 8,
+        "fields": {
+            "feeling_sub_category": "disconnected",
+            "feeling_main_category": 2
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 9,
+        "fields": {
+            "feeling_sub_category": "surprise",
+            "feeling_main_category": 2
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 10,
+        "fields": {
+            "feeling_sub_category": "confusion",
+            "feeling_main_category": 2
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 11,
+        "fields": {
+            "feeling_sub_category": "aversion",
+            "feeling_main_category": 2
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 12,
+        "fields": {
+            "feeling_sub_category": "energy",
+            "feeling_main_category": 3
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 13,
+        "fields": {
+            "feeling_sub_category": "pain/pleasure",
+            "feeling_main_category": 3
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 14,
+        "fields": {
+            "feeling_sub_category": "food/drink",
+            "feeling_main_category": 3
+        }
+    },
+    {
+        "model": "entries.FeelingSubCategory",
+        "pk": 15,
+        "fields": {
+            "feeling_sub_category": "temperature",
+            "feeling_main_category": 3
+        }
+    }
+]

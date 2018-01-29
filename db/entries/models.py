@@ -1,8 +1,9 @@
 from datetime import datetime
 
 from django.contrib.auth.models import User
-from django.core.urlresolvers import reverse
 from django.db import models
+
+from smart_selects.db_fields import ChainedForeignKey
 
 from . import FEELINGS_DICT, NEEDS_DICT
 
@@ -29,8 +30,103 @@ def get_feelings_choices(main_category):
         return_tup += tuple((feel.upper(), feel.lower()) for feel in value_list)
     return return_tup
 
-ALL_FEELING_CHOICES = get_feelings_choices('emotional') + get_feelings_choices('mental') + get_feelings_choices('physical')
+
+ALL_FEELING_CHOICES = get_feelings_choices('emotional') + get_feelings_choices('mental') + get_feelings_choices(
+    'physical')
 All_NEED_CHOICES = get_need_choices()
+
+
+class BaseEntry(models.Model):
+    user = models.ForeignKey(User)
+    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+
+    class Meta:
+        abstract = True
+
+
+class FeelingMainCategory(models.Model):
+    feeling_main_category = models.CharField(max_length=256, editable=False, choices=MAIN_CATEGORY_CHOICES)
+
+    def __str__(self):
+        return self.feeling_main_category
+
+    class Meta:
+        verbose_name_plural = "Feeling Categories"
+
+
+class FeelingSubCategory(models.Model):
+    feeling_main_category = models.ForeignKey(FeelingMainCategory, editable=False)
+    feeling_sub_category = models.CharField(max_length=256, editable=False, choices=SUBCAT_CHOICES)
+
+    def __str__(self):
+        return self.feeling_sub_category
+
+    class Meta:
+        verbose_name_plural = "Feeling Subcategories"
+
+
+class FeelingLeaf(models.Model):
+    feeling_main_category = models.ForeignKey(FeelingMainCategory, editable=False)
+    feeling_sub_category = models.ForeignKey(FeelingSubCategory, editable=False)
+    feeling_leaf = models.CharField(max_length=256, editable=False, choices=ALL_FEELING_CHOICES)
+
+    def __str__(self):
+        return self.feeling_leaf
+
+    # class Meta:
+        # verbose_name_plural = ""
+
+
+class NeedCategory(models.Model):
+    need_category = models.CharField(max_length=256, editable=False, choices=NEED_CATEGORY_CHOICES)
+
+    def __str__(self):
+        return self.need_category
+
+    class Meta:
+        verbose_name_plural = "Need Categories"
+
+
+class NeedLeaf(models.Model):
+    need_category = models.ForeignKey(NeedCategory, editable=False)
+    need_leaf = models.CharField(max_length=256, editable=False, choices=All_NEED_CHOICES)
+
+    def __str__(self):
+        return self.need_leaf
+
+
+class Entry(BaseEntry):
+    feeling_main_category = models.ForeignKey(FeelingMainCategory)
+    feeling_sub_category = models.ForeignKey(FeelingSubCategory)
+    feeling = ChainedForeignKey(FeelingLeaf,
+                                chained_field="feeling_sub_category",
+                                chained_model_field="feeling_sub_category",
+                                show_all=False,
+                                auto_choose=True,
+                                sort=True)
+    need_category = models.ForeignKey(NeedCategory)
+    need = ChainedForeignKey(NeedLeaf,
+                             chained_field="need_category",
+                             chained_model_field='need_category',
+                             show_all=False,
+                             auto_choose=True,
+                             sort=True)
+    notes = models.TextField(blank=True)
+    public = models.CharField(default='FALSE', choices=(
+        ('FALSE', 'false'), ('TRUE', 'true')
+    ), max_length=5)
+
+    class Meta:
+        verbose_name_plural = 'entries'
+
+    def __str__(self):
+        created_at = "" if not self.created_at else " at " + datetime.strftime(self.created_at, "%y-%m-%d %H:%M:%S")
+        return "entry by " + self.user.username + created_at
+
+
+"""
+older models
+"""
 
 
 class Feeling(models.Model):
@@ -38,48 +134,30 @@ class Feeling(models.Model):
     sub_category = models.CharField(max_length=256, editable=False, choices=SUBCAT_CHOICES)
     name = models.CharField(max_length=256, editable=False, choices=ALL_FEELING_CHOICES)
 
-    # def __unicode__(self):
-    #     return self.name
-
     def __str__(self):
-        return self.name+" : "+self.sub_category+" : "+self.main_category
+        return self.name + " : " + self.sub_category + " : " + self.main_category
 
 
 class Need(models.Model):
     category = models.CharField(max_length=256, choices=NEED_CATEGORY_CHOICES, editable=False)
     name = models.CharField(max_length=256, choices=All_NEED_CHOICES, editable=False)
 
-    # def __unicode__(self):
-    #     return self.name
-
     def __str__(self):
-        return self.name+" : "+self.category
-
-
-class BaseEntry(models.Model):
-    user = models.ForeignKey(User)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        abstract = True
+        return self.name + " : " + self.category
 
 
 class FeelingsNeedsEntry(BaseEntry):
-
     feeling = models.ForeignKey(Feeling)
     need = models.ForeignKey(Need)
     notes = models.TextField(blank=True)
     public = models.CharField(default='FALSE', choices=(
-      ('FALSE', 'false'), ('TRUE', 'true')
+        ('FALSE', 'false'), ('TRUE', 'true')
     ), max_length=5)
 
     class Meta:
         verbose_name = 'feelings-needs entry'
         verbose_name_plural = 'feelings-needs entries'
 
-    def get_absolute_url(self):
-        return reverse('entries:detail', kwargs={'pk': self.pk})
-
     def __str__(self):
-        created_at = ""  if not self.created_at else " at " + datetime.strftime(self.created_at, "%y-%m-%d %H:%M:%S")
+        created_at = "" if not self.created_at else " at " + datetime.strftime(self.created_at, "%y-%m-%d %H:%M:%S")
         return "f/n entered by " + self.user.username + created_at
