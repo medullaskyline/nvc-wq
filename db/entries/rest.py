@@ -38,10 +38,28 @@ rest.router.register_model(
 rest.router.register_model(
     FeelingMainCategory,
     fields="__all__",
+    children=[{
+                    "name": "feelingsubcategory",
+                    "label": "FeelingSubCategory",
+                    "bind": {
+                        "required": True
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "feelingsubcategory"
+                }],
 )
 rest.router.register_model(
     FeelingSubCategory,
     fields="__all__",
+    children=[{
+                    "name": "feelingleaf",
+                    "label": "FeelingLeaf",
+                    "bind": {
+                        "required": True
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "feelingleaf"
+                }],
 )
 rest.router.register_model(
     FeelingLeaf,
@@ -51,14 +69,14 @@ rest.router.register_model(
     NeedCategory,
     fields="__all__",
     children=[{
-                    "name": "need",
-                    "label": "Need",
+                    "name": "needleaf",
+                    "label": "NeedLeaf",
                     "bind": {
                         "required": True
                     },
                     "type": "string",
                     "wq:ForeignKey": "needleaf"
-                }]
+                }],
 )
 rest.router.register_model(
     NeedLeaf,
@@ -70,7 +88,7 @@ rest.router.register_model(
     filter=filter_entries,
     cache_filter=filter_entries,
     my_custom_flag=True,
-    serializer=EntrySerializer,  # this just specifies that public is a choice field
+    serializer=EntrySerializer,
 )
 
 rest.router.register_model(
@@ -84,7 +102,7 @@ rest.router.register_model(
 rest.router.register_model(
     FeelingsNeedsEntry,
     fields="__all__",
-    viewset=FeelingsNeedsEntryViewSet, # disabling bc it doesn't prevent ppl from adding entries with other ppl's user ids
+    viewset=FeelingsNeedsEntryViewSet,
     filter=filter_entries,
     cache_filter=filter_entries,
     my_custom_flag=True,

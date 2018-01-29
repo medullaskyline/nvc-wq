@@ -10,7 +10,7 @@
         {{>home}}
         <h1>needleaf List{{#parent_id}} for {{parent_label}}{{/parent_id}}</h1>
         {{#page_config.can_add}}
-        <a href="{{rt}}/needleafs/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
+        <a href="{{rt}}/NeedLeaves/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
           Add New
         </a>
         {{/page_config.can_add}}
@@ -64,12 +64,12 @@
             {{/unsynced}}
             {{#list}}
             <li>
-              <a href="{{rt}}/needleafs/{{id}}">{{label}}</a>
+              <a href="{{rt}}/NeedLeaves/{{id}}">{{label}}</a>
             </li>
             {{/list}}
             {{#page_config.can_add}}
             <li data-icon="plus" data-theme="b">
-              <a href="{{rt}}/needleafs/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add needleaf</a>
+              <a href="{{rt}}/NeedLeaves/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add needleaf</a>
             </li>
             {{/page_config.can_add}}
           </ul>

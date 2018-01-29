@@ -17,19 +17,19 @@ class EntrySerializer(ModelSerializer):
     class Meta:
         wq_field_config = {
             'public': {'type': 'select one'},
-            "feeling": {"wq:ForeignKey": "feelingleaf"},
-            "need category": {"children": [
-                {
-                    "name": "need",
-                    "label": "Need",
-                    "bind": {
-                        "required": True
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "needleaf"
-                },
-            ]},
-            # "need": {"wq:ForeignKey": "needleaf"}
+            # "feeling": {"wq:ForeignKey": "feelingleaf"},
+            # "need category": {"children": [
+            #     {
+            #         "name": "need",
+            #         "label": "Need",
+            #         "bind": {
+            #             "required": True
+            #         },
+            #         "type": "string",
+            #         "wq:ForeignKey": "needleaf"
+            #     },
+            # ]},
+            # # "need": {"wq:ForeignKey": "needleaf"}
         }
 
 

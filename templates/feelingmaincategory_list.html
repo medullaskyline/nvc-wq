@@ -10,7 +10,7 @@
         {{>home}}
         <h1>feelingmaincategory List{{#parent_id}} for {{parent_label}}{{/parent_id}}</h1>
         {{#page_config.can_add}}
-        <a href="{{rt}}/FeelingCategories/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
+        <a href="{{rt}}/FeelingMainCategories/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
           Add New
         </a>
         {{/page_config.can_add}}
@@ -64,12 +64,12 @@
             {{/unsynced}}
             {{#list}}
             <li>
-              <a href="{{rt}}/FeelingCategories/{{id}}">{{label}}</a>
+              <a href="{{rt}}/FeelingMainCategories/{{id}}">{{label}}</a>
             </li>
             {{/list}}
             {{#page_config.can_add}}
             <li data-icon="plus" data-theme="b">
-              <a href="{{rt}}/FeelingCategories/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add feelingmaincategory</a>
+              <a href="{{rt}}/FeelingMainCategories/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add feelingmaincategory</a>
             </li>
             {{/page_config.can_add}}
           </ul>
