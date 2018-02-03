@@ -3,42 +3,97 @@ from wq.db.patterns import serializers as patterns
 from rest_framework import serializers
 from rest_framework.utils import model_meta
 
-from .models import FeelingLeaf
+from .models import (FeelingLeaf, NeedLeaf, Entry, FeelingSubCategory, FeelingMainCategory,
+                     NeedCategory)
 
 
-class FeelingsNeedsEntrySerializer(ModelSerializer):
+class FeelingLeafSerializer(ModelSerializer):
     class Meta:
-        wq_field_config = {
-            'public': {'type': 'select one'}
-        }
+        model = FeelingLeaf
+        fields = ('feeling_leaf',)
+
+
+class FeelingSubCategorySerializer(ModelSerializer):
+    feeling_leaves = FeelingLeafSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = FeelingSubCategory
+        fields = ('feeling_sub_category', 'feeling_leaves')
+
+
+class FeelingMainCategorySerializer(ModelSerializer):
+    feeling_leaves = FeelingLeafSerializer(read_only=True, many=True)
+    feeling_sub_categories = FeelingSubCategorySerializer(read_only=True, many=True)
+
+    class Meta:
+        model = FeelingMainCategory
+        fields = ('feeling_main_category', 'feeling_sub_categories', 'feeling_leaves')
 
 
 class EntrySerializer(ModelSerializer):
+    # feeling_main_category = FeelingMainCategorySerializer(read_only=True)
+    # serializer = BookSerializer(queryset, many=True)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(self, *args, **kwargs)
+        # user = self.context.get('request').user
+
     class Meta:
+        fields = "__all__"  #('feeling_main_category',)
         wq_field_config = {
             'public': {'type': 'select one'},
-            # "feeling": {"wq:ForeignKey": "feelingleaf"},
-            # "need category": {"children": [
-            #     {
-            #         "name": "need",
-            #         "label": "Need",
-            #         "bind": {
-            #             "required": True
+            # 'feeling_main_category': {
+            #     "children": [
+            #         {
+            #             "name": "feeling_sub_category",
+            #             "label": "FeelingSubCategory",
+            #             "bind": {
+            #                 "required": True
+            #             },
+            #             "type": "string",
+            #             "wq:ForeignKey": "feeling_sub_category"
             #         },
-            #         "type": "string",
-            #         "wq:ForeignKey": "needleaf"
-            #     },
-            # ]},
-            # # "need": {"wq:ForeignKey": "needleaf"}
+            #         {
+            #             "name": "feeling_leaf",
+            #             "label": "FeelingLeaf",
+            #             "bind": {
+            #                 "required": True
+            #             },
+            #             "type": "string",
+            #             "wq:ForeignKey": "FeelingLeaf"
+            #         },
+            #     ],
+            # }
         }
 
 
-# class FeelingSerializer(patterns.AttachmentSerializer):
-#
-#     class Meta(patterns.AttachmentSerializer.Meta):
-#         model = FeelingLeaf
-#         exclude = ('FeelingSubCategory',)
-#         object_field = 'FeelingSubCategory'
+'''
+class TrackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Track
+        fields = ('order', 'title', 'duration')
+
+class AlbumSerializer(serializers.ModelSerializer):
+    tracks = TrackSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Album
+        fields = ('album_name', 'artist', 'tracks')
+
+class ItemSerializer(patterns.AttachmentSerializer):
+    class Meta(patterns.AttachmentSerializer.Meta):
+        model = Item
+        exclude = ('survey',)
+        object_field = 'survey'
+        wq_config = {
+            'initial': 3,
+        }
+
+class SurveySerializer(patterns.AttachedModelSerializer):
+    items = ItemSerializer(many=True)
+    class Meta:
+        model = Survey
+'''
 
 
 class UserSerializer(ModelSerializer):
@@ -46,8 +101,7 @@ class UserSerializer(ModelSerializer):
         super().__init__(*args, **kwargs)
         self.xlsform_types[serializers.BooleanField] = 'boolean'
 
-    # overriding to prevent permissions and groups
-    # or just exclude = ('groups', 'permissions') in Meta?
+    # overriding to exclude permissions and groups
     def get_label_fields(self, default_fields):
         if not self.add_label_fields:
             return {}
@@ -73,6 +127,7 @@ class UserSerializer(ModelSerializer):
         return fields
 
     class Meta:
+
         wq_field_config = {
             'is_staff': {'type': 'boolean'},
             'is_active': {'type': 'boolean'}
@@ -131,4 +186,11 @@ class UserSerializer(ModelSerializer):
                     "type": "dateTime"
                 }
             ]
+        }
+
+
+class FeelingsNeedsEntrySerializer(ModelSerializer):
+    class Meta:
+        wq_field_config = {
+            'public': {'type': 'select one'}
         }

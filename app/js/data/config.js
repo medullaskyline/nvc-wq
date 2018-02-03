@@ -8,24 +8,6 @@ define({
             "url": "logout",
             "name": "logout"
         },
-        "feelingsubcategory": {
-            "name": "feelingsubcategory",
-            "url": "FeelingSubcategories",
-            "list": true,
-            "form": []
-        },
-        "need": {
-            "name": "need",
-            "url": "needs",
-            "list": true,
-            "form": []
-        },
-        "feelingmaincategory": {
-            "name": "feelingmaincategory",
-            "url": "FeelingMainCategories",
-            "list": true,
-            "form": []
-        },
         "entry": {
             "my_custom_flag": true,
             "cache": "filter",
@@ -109,35 +91,6 @@ define({
                 }
             ]
         },
-        "feelingleaf": {
-            "name": "feelingleaf",
-            "url": "FeelingLeaves",
-            "list": true,
-            "form": []
-        },
-        "needcategory": {
-            "children": [
-                {
-                    "name": "need",
-                    "label": "Need",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "needleaf"
-                }
-            ],
-            "name": "needcategory",
-            "url": "NeedCategories",
-            "list": true,
-            "form": []
-        },
-        "feeling": {
-            "name": "feeling",
-            "url": "feelings",
-            "list": true,
-            "form": []
-        },
         "user": {
             "my_custom_flag": true,
             "lookup": "username",
@@ -209,66 +162,50 @@ define({
                 }
             ]
         },
-        "feelingsneedsentry": {
-            "my_custom_flag": true,
-            "cache": "filter",
-            "name": "feelingsneedsentry",
-            "url": "feelings-needsentries",
+        "feelingleaf": {
+            "cache": "all",
             "list": true,
-            "form": [
-                {
-                    "name": "user",
-                    "label": "User",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "user"
-                },
-                {
-                    "name": "feeling",
-                    "label": "Feeling",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "feeling"
-                },
-                {
-                    "name": "need",
-                    "label": "Need",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "need"
-                },
-                {
-                    "name": "notes",
-                    "label": "Notes",
-                    "type": "text"
-                },
-                {
-                    "name": "public",
-                    "label": "Public",
-                    "choices": [
-                        {
-                            "name": "FALSE",
-                            "label": "false"
-                        },
-                        {
-                            "name": "TRUE",
-                            "label": "true"
-                        }
-                    ],
-                    "type": "select one"
-                }
-            ]
+            "name": "feelingleaf",
+            "url": "FeelingLeaves",
+            "form": []
         },
         "needleaf": {
+            "cache": "all",
+            "list": true,
             "name": "needleaf",
             "url": "NeedLeaves",
+            "form": []
+        },
+        "feelingmaincategory": {
+            "cache": "all",
+            "name": "feelingmaincategory",
+            "url": "FeelingMainCategories",
             "list": true,
+            "form": []
+        },
+        "needcategory": {
+            "children": [
+                {
+                    "name": "needleaf",
+                    "label": "Need Leaf",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "needleaf"
+                }
+            ],
+            "cache": "all",
+            "name": "needcategory",
+            "url": "NeedCategories",
+            "list": true,
+            "form": []
+        },
+        "feelingsubcategory": {
+            "cache": "all",
+            "list": true,
+            "name": "feelingsubcategory",
+            "url": "FeelingSubcategories",
             "form": []
         }
     }

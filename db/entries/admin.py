@@ -53,13 +53,13 @@ class FeelingMainCategoryAdmin(admin.ModelAdmin):
     can_delete = False
 
     def feeling_main_categories(self, obj):
-        return obj.name
+        return obj.feeling_main_category
 
     def feeling_sub_categories(self, obj):
-        return ', '.join([sc.name for sc in obj.feelingsubcategory_set.all()])
+        return ', '.join([sc.feeling_sub_category for sc in obj.feelingsubcategory_set.all()])
 
     def feeling_leaves(self, obj):
-        return ', '.join([feel.name for feel in obj.feelingleaf_set.all()])
+        return ', '.join([feel.feeling_leaf for feel in obj.feelingleaf_set.all()])
 
     def has_add_permission(self, request, obj=None):
         return False
@@ -98,10 +98,10 @@ class NeedCategoryAdmin(admin.ModelAdmin):
     can_delete = False
 
     def need_categories(self, obj):
-        return obj.name
+        return obj.need_category
 
     def need_leaves(self, obj):
-        return ', '.join([need.name for need in obj.needleaf_set.all()])
+        return ', '.join([need.need_leaf for need in obj.needleaf_set.all()])
 
     def has_add_permission(self, request, obj=None):
         return False
