@@ -8,86 +8,64 @@ define({
             "url": "logout",
             "name": "logout"
         },
-        "entry": {
-            "my_custom_flag": true,
-            "cache": "filter",
-            "name": "entry",
-            "url": "entries",
+        "relationshiptype": {
+            "name": "relationshiptype",
+            "url": "relationshiptypes",
             "list": true,
             "form": [
                 {
-                    "name": "user",
-                    "label": "User",
+                    "name": "name",
+                    "label": "Name",
                     "bind": {
                         "required": true
                     },
-                    "type": "string",
-                    "wq:ForeignKey": "user"
+                    "wq:length": 255,
+                    "type": "string"
                 },
                 {
-                    "name": "feeling_main_category",
-                    "label": "Feeling Main Category",
+                    "name": "inverse_name",
+                    "label": "Inverse Name",
+                    "wq:length": 255,
+                    "type": "string"
+                },
+                {
+                    "name": "from_type",
+                    "label": "From Type",
                     "bind": {
                         "required": true
                     },
-                    "type": "string",
-                    "wq:ForeignKey": "feelingmaincategory"
+                    "type": "string"
                 },
                 {
-                    "name": "feeling_sub_category",
-                    "label": "Feeling Sub Category",
+                    "name": "to_type",
+                    "label": "To Type",
                     "bind": {
                         "required": true
                     },
-                    "type": "string",
-                    "wq:ForeignKey": "feelingsubcategory"
+                    "type": "string"
                 },
                 {
-                    "name": "feeling",
-                    "label": "Feeling",
+                    "name": "computed",
+                    "label": "Computed",
+                    "type": "string"
+                }
+            ],
+            "label_template": "{{name}}"
+        },
+        "needcategory": {
+            "cache": "all",
+            "name": "needcategory",
+            "url": "NeedCategories",
+            "list": true,
+            "form": [
+                {
+                    "name": "need_leaves",
+                    "label": "Need Leaves",
                     "bind": {
                         "required": true
                     },
-                    "type": "string",
-                    "wq:ForeignKey": "feelingleaf"
-                },
-                {
-                    "name": "need_category",
-                    "label": "Need Category",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "needcategory"
-                },
-                {
-                    "name": "need",
-                    "label": "Need",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "needleaf"
-                },
-                {
-                    "name": "notes",
-                    "label": "Notes",
-                    "type": "text"
-                },
-                {
-                    "name": "public",
-                    "label": "Public",
-                    "choices": [
-                        {
-                            "name": "FALSE",
-                            "label": "false"
-                        },
-                        {
-                            "name": "TRUE",
-                            "label": "true"
-                        }
-                    ],
-                    "type": "select one"
+                    "type": "repeat",
+                    "children": []
                 }
             ]
         },
@@ -162,12 +140,132 @@ define({
                 }
             ]
         },
-        "feelingleaf": {
+        "feelingmaincategory": {
             "cache": "all",
+            "name": "feelingmaincategory",
+            "url": "FeelingMainCategories",
             "list": true,
-            "name": "feelingleaf",
-            "url": "FeelingLeaves",
-            "form": []
+            "form": [
+                {
+                    "name": "feeling_sub_categories",
+                    "label": "Feeling Sub Categories",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "repeat",
+                    "children": [
+                        {
+                            "name": "feeling_leaves",
+                            "label": "Feeling Leaves",
+                            "bind": {
+                                "required": true
+                            },
+                            "type": "repeat",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "entry": {
+            "my_custom_flag": true,
+            "cache": "filter",
+            "name": "entry",
+            "url": "entries",
+            "list": true,
+            "form": [
+                {
+                    "name": "user",
+                    "label": "User",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "user"
+                },
+                {
+                    "name": "feeling_main_category",
+                    "label": "Feeling Main Category",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "feelingmaincategory"
+                },
+                {
+                    "name": "feeling_sub_category",
+                    "label": "Feeling Sub Category",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "chained",
+                    "wq:ForeignKey": "feelingsubcategory"
+                },
+                {
+                    "name": "feeling",
+                    "label": "Feeling",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "feelingleaf"
+                },
+                {
+                    "name": "need_category",
+                    "label": "Need Category",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "needcategory"
+                },
+                {
+                    "name": "need",
+                    "label": "Need",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "wq:ForeignKey": "needleaf"
+                },
+                {
+                    "name": "notes",
+                    "label": "Notes",
+                    "type": "text"
+                },
+                {
+                    "name": "public",
+                    "label": "Public",
+                    "choices": [
+                        {
+                            "name": "FALSE",
+                            "label": "false"
+                        },
+                        {
+                            "name": "TRUE",
+                            "label": "true"
+                        }
+                    ],
+                    "type": "select one"
+                }
+            ]
+        },
+        "feelingsubcategory": {
+            "cache": "all",
+            "name": "feelingsubcategory",
+            "url": "FeelingSubcategories",
+            "list": true,
+            "form": [
+                {
+                    "name": "feeling_leaves",
+                    "label": "Feeling Leaves",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "repeat",
+                    "children": []
+                }
+            ]
         },
         "needleaf": {
             "cache": "all",
@@ -176,36 +274,11 @@ define({
             "url": "NeedLeaves",
             "form": []
         },
-        "feelingmaincategory": {
+        "feelingleaf": {
             "cache": "all",
-            "name": "feelingmaincategory",
-            "url": "FeelingMainCategories",
+            "name": "feelingleaf",
+            "url": "FeelingLeaves",
             "list": true,
-            "form": []
-        },
-        "needcategory": {
-            "children": [
-                {
-                    "name": "needleaf",
-                    "label": "Need Leaf",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string",
-                    "wq:ForeignKey": "needleaf"
-                }
-            ],
-            "cache": "all",
-            "name": "needcategory",
-            "url": "NeedCategories",
-            "list": true,
-            "form": []
-        },
-        "feelingsubcategory": {
-            "cache": "all",
-            "list": true,
-            "name": "feelingsubcategory",
-            "url": "FeelingSubcategories",
             "form": []
         }
     }

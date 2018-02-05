@@ -18,6 +18,20 @@
       <div role="main" class="ui-content">
           <h1>{{label}}</h1>
           <table>
+            <tr>
+              <th>Feeling Sub Categories</th>
+              <td>
+                {{#feelingsubcategories}}
+                <table>
+                  <tr>
+                    <th>Feeling Leaves</th>
+                    <td>{{feeling_leaves}}</td>
+                  </tr>
+                </table>
+                <hr>
+                {{/feelingsubcategories}}
+              </td>
+            </tr>
           </table>
       </div>
     </div>

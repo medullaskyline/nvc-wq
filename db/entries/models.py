@@ -2,7 +2,6 @@ from datetime import datetime
 
 from django.contrib.auth.models import User
 from django.db import models
-
 from smart_selects.db_fields import ChainedForeignKey
 
 from . import FEELINGS_DICT, NEEDS_DICT
@@ -47,6 +46,9 @@ class BaseEntry(models.Model):
 class FeelingMainCategory(models.Model):
     feeling_main_category = models.CharField(max_length=256, editable=False, choices=MAIN_CATEGORY_CHOICES)
 
+    def feeling_sub_categories(self):
+        return FeelingSubCategory.objects.filter(feeling_main_category_id=self.pk)
+
     def __str__(self):
         return self.feeling_main_category
 
@@ -57,6 +59,9 @@ class FeelingMainCategory(models.Model):
 class FeelingSubCategory(models.Model):
     feeling_main_category = models.ForeignKey(FeelingMainCategory, editable=False)
     feeling_sub_category = models.CharField(max_length=256, editable=False, choices=SUBCAT_CHOICES)
+
+    def feeling_leaves(self):
+        return FeelingLeaf.objects.filter(feeling_sub_category_id=self.pk)
 
     def __str__(self):
         return self.feeling_sub_category
@@ -79,6 +84,9 @@ class FeelingLeaf(models.Model):
 
 class NeedCategory(models.Model):
     need_category = models.CharField(max_length=256, editable=False, choices=NEED_CATEGORY_CHOICES)
+
+    def need_leaves(self):
+        return NeedLeaf.objects.filter(need_category_id=self.pk)
 
     def __str__(self):
         return self.need_category
@@ -130,3 +138,42 @@ class Entry(BaseEntry):
     def __str__(self):
         created_at = "" if not self.created_at else " at " + datetime.strftime(self.created_at, "%y-%m-%d %H:%M:%S")
         return "entry by " + self.user.username + created_at
+
+"""
+class RelatedEntry(RelatedModel, BaseEntry):
+    feeling_main_category = models.ForeignKey(FeelingMainCategory)
+    feeling_sub_category = ChainedForeignKey(FeelingSubCategory,
+                                             chained_field="feeling_main_category",
+                                             chained_model_field="feeling_main_category",
+                                             show_all=False,
+                                             auto_choose=True,
+                                             sort=True)
+    feeling = ChainedForeignKey(FeelingLeaf,
+                                chained_field="feeling_sub_category",
+                                chained_model_field="feeling_sub_category",
+                                show_all=False,
+                                auto_choose=True,
+                                sort=True)
+    need_category = models.ForeignKey(NeedCategory)
+    need = ChainedForeignKey(NeedLeaf,
+                             chained_field="need_category",
+                             chained_model_field='need_category',
+                             show_all=False,
+                             auto_choose=True,
+                             sort=True)
+    notes = models.TextField(blank=True)
+    public = models.CharField(default='FALSE', choices=(
+        ('FALSE', 'false'), ('TRUE', 'true')
+    ), max_length=5)
+
+    class Meta:
+        verbose_name_plural = 'entries'
+
+    def __str__(self):
+        qs_list = list(self.user.relatedentry_set.all())
+        index = str(qs_list.index(self))
+        username = self.user.username
+        length = str(len(qs_list))
+
+        return f'related entry by {username}: {index} of {length}'
+"""

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{label}}</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{label}}</h1>
+        {{#page_config.can_change}}
+        <a href="{{rt}}/relationshiptypes/{{id}}/edit" data-icon="edit" data-transition="flip">
+          Edit
+        </a>
+        {{/page_config.can_change}}
+      </div>
+      <div role="main" class="ui-content">
+          <h1>{{label}}</h1>
+          <table>
+            <tr>
+              <th>Name</th>
+              <td>{{name}}</td>
+            </tr>
+            <tr>
+              <th>Inverse Name</th>
+              <td>{{inverse_name}}</td>
+            </tr>
+            <tr>
+              <th>From Type</th>
+              <td>{{from_type}}</td>
+            </tr>
+            <tr>
+              <th>To Type</th>
+              <td>{{to_type}}</td>
+            </tr>
+            <tr>
+              <th>Computed</th>
+              <td>{{computed}}</td>
+            </tr>
+          </table>
+      </div>
+    </div>
+  </body>
+</html>

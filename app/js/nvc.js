@@ -8,10 +8,13 @@ requirejs.config({
 
 requirejs(['nvc/main']);
 
-define(['wq/model'], function(model) {
+define(['wq/model', 'chainedfk'], function(model) {
 //   var items = model('/items');
 //   var types = model({'url': 'types'});
-
+    var entry = model.Model({
+        'query': {'url': '/entries'},
+        'functions': [],
+    });
 /*
 https://wq.io/1.0/docs/model-js
 query	The wq/store.js query to use when retrieving data for the model. This is often an object of the form {'url': url}.
@@ -21,6 +24,7 @@ url	A shortcut for setting {'query': {'url': url}}.
 max_local_pages	The maximum number of paginated server responses to store locally. This should almost always be 1 (the default). Most operations requiring fast and/or offline capabilities will be completed with the first page of data. Subsequent pages (if any) will be loaded on-demand via ds.fetch()
 partial	Flag indicating that not all data is stored locally. This should be set whenever you expect there to be more than max_local_pages worth of data in the server database.
 reversed	Set to true if the data is sorted in reverse chronological order. If set, new items (added via update()) will be placed at the beginning of the list instead of the end.
+
 
 // Filter on existing field
 myModel.filter({'type_id': 3}).then(function(type3items) {
@@ -43,4 +47,5 @@ myModel.filter({'big': true}).then(function(bigItems) {
 });
 
 */
+
 });

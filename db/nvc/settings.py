@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'wq.db.rest',
     'wq.db.rest.auth',
     'smart_selects',
+    # added to try the relate pattern
+    'wq.db.patterns.relate',
 
     # Project apps
     'entries',
@@ -148,4 +150,4 @@ import sys
 
 DEBUG_WITH_RUNSERVER = 'manage.py' in sys.argv[0]
 
-# JQUERY_URL = ''
+JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'
