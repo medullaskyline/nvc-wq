@@ -30,7 +30,7 @@ class NeedCategorySerializer(AttachedModelSerializer):
 
     class Meta:
         model = NeedCategory
-        fields = ('need_category', 'need_leaves')
+        fields = ("id", 'need_category', 'need_leaves')
 
 
 class FeelingLeafSerializer(AttachmentSerializer):
@@ -45,7 +45,7 @@ class FeelingSubCategorySerializer(AttachedModelSerializer, AttachmentSerializer
 
     class Meta:
         model = FeelingSubCategory
-        fields = ('feeling_sub_category', 'feeling_leaves')
+        fields = ('id', 'feeling_sub_category', 'feeling_leaves')
         object_field = 'feeling_main_category'
 
 
@@ -58,7 +58,7 @@ class FeelingMainCategorySerializer(AttachedModelSerializer):
 
     class Meta:
         model = FeelingMainCategory
-        fields = ('feeling_main_category', 'feeling_sub_categories')
+        fields = ('id', 'feeling_main_category', 'feeling_sub_categories')
 
 
 
@@ -277,10 +277,22 @@ class EntrySerializer(ModelSerializer):
     class Meta:
         fields = "__all__"
         wq_field_config = {
-            'public': {'type': 'select one'},
-            'feeling_sub_category': {'type': 'chained'}
+            'public': {'type': 'select one'}
         }
 
+
+"""
+wq_field_config = {
+    'public': {'type': 'select one'},
+    'feeling_main_category': {'children': ['feeling_sub_category']}
+    'feeling_sub_category': {'children': ['feeling_leaf']},
+    // ?? 'feeling_leaf': {'type': 'repeat'},
+    'need_category': {'children': ['need_leaf']}
+}
+"""
+
+
+# 'feeling_sub_category': {'type': 'chained'}
 
 class UserSerializer(ModelSerializer):
     def __init__(self, *args, **kwargs):
