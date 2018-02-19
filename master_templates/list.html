@@ -69,7 +69,9 @@
             {{/unsynced}}
             {{#list}}
             <li>
-              <a href="{{rt}}/[[form.urlpath]]/{{id}}">{{label}}</a>
+              [[#form]]
+              <a href="{{rt}}/[[urlpath]]/{{id}}[[#children]]/[[childUrl]][[/children]]">{{label}}</a>
+              [[/form]]
             </li>
             {{/list}}
             {{#page_config.can_add}}

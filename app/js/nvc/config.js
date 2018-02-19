@@ -4,7 +4,10 @@ function(config, templates, version, module) {
 var overrides = module.config();
 
 config.router = {
-    'base_url': ''
+    'base_url': '',
+    'config': {
+        'debug': true,
+    }
 };
 
 config.template = {

@@ -3,6 +3,15 @@ define(['wq/app', 'wq/map', 'wq/patterns', 'wq/photos',
         'leaflet.draw', 'leaflet.markercluster'],
 function(app, map, patterns, photos, config) {
 
+/* import config from app/js/nvc/config
+ config has attribute
+
+ config.router = {
+    'base_url': ''
+};
+can this be changed to change slug to
+ 'slug': '([^/?#]+)',
+*/
 app.use(map);
 app.use(patterns);
 app.use(photos);

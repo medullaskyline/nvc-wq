@@ -2,6 +2,8 @@ from datetime import datetime
 
 from django.contrib.auth.models import User
 from django.db import models
+from django.core.urlresolvers import reverse
+# from wq.db.patterns.models import RelatedModel, Relationship, InverseRelationship, RelationshipType, InverseRelationshipType, RelatedModelManager
 from smart_selects.db_fields import ChainedForeignKey
 
 from . import FEELINGS_DICT, NEEDS_DICT
@@ -36,7 +38,7 @@ All_NEED_CHOICES = get_need_choices()
 
 
 class BaseEntry(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User) #, editable=False) if this is false, it wont show up in the edit form
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
 
     class Meta:
@@ -85,14 +87,18 @@ class FeelingLeaf(models.Model):
 class NeedCategory(models.Model):
     need_category = models.CharField(max_length=256, editable=False, choices=NEED_CATEGORY_CHOICES)
 
-    def need_leaves(self):
-        return NeedLeaf.objects.filter(need_category_id=self.pk)
+    def needleaves(self):
+        return self.needleaf_set.all()
 
     def __str__(self):
         return self.need_category
 
+    def get_absolute_url(self):
+        return reverse('needleaf-for-need_category', kwargs={'need_category': self.pk})
+
     class Meta:
         verbose_name_plural = "Need Categories"
+
 
 
 class NeedLeaf(models.Model):
@@ -138,6 +144,13 @@ class Entry(BaseEntry):
     def __str__(self):
         created_at = "" if not self.created_at else " at " + datetime.strftime(self.created_at, "%y-%m-%d %H:%M:%S")
         return "entry by " + self.user.username + created_at
+
+    """
+    wq_label_template = "{{user.username}} on {{created_at}}"
+
+    def __str__(self):
+        return pystache.render(self.wq_label_template, self)    
+    """
 
 """
 class RelatedEntry(RelatedModel, BaseEntry):

@@ -3,10 +3,11 @@ import six
 
 from wq.db.rest.serializers import ModelSerializer, LookupRelatedField
 from wq.db.patterns.serializers import AttachmentSerializer, AttachedModelSerializer
+from wq.db.patterns.base.serializers import AttachmentListSerializer
 from rest_framework import serializers
 from rest_framework.relations import method_overridden, PKOnlyObject
 from rest_framework.utils import model_meta
-from rest_framework.fields import empty, Field, iter_options, get_attribute, is_simple_callable
+from rest_framework.fields import empty, Field, iter_options, get_attribute, is_simple_callable, ListField
 from smart_selects.form_fields import ChainedModelChoiceField
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils.encoding import smart_text
@@ -19,19 +20,70 @@ from .models import (FeelingLeaf, NeedLeaf, FeelingSubCategory, FeelingMainCateg
 
 
 class NeedLeafSerializer(AttachmentSerializer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
     class Meta:
         model = NeedLeaf
         fields = ('need_leaf',)
-        object_field = ('need_sub_category',)
-
+        object_field = ('need_category',)
+        # from super: list_serializer_class = AttachmentListSerializer
 
 class NeedCategorySerializer(AttachedModelSerializer):
-    need_leaves = NeedLeafSerializer(many=True)
+    needleaves = NeedLeafSerializer(many=True)  # nb: no underscore in serializer fields
+    # or needleaves = HyperLinkedRelatedField(view_name="needleaf-for-need_category") instead of view_name="needcategory-detail"
+    # pass kwarg {'queryset': <qs>} or {'read_only': True} but not both and not neither
+    # {many: True}
+
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # self.is_detail
+        # self.bind(<field_name>, self)
+        #self.fields
+        # if args and self.is_detail:
+        #   pk = args[0].pk
+        #   self.get_attachment(self.Meta.model, pk)
+        # self.build_field(field_name, info, model_class, nested_depth)
+        # self.instance
+        # self.context
+        # self.serializer_url_field
 
     class Meta:
         model = NeedCategory
-        fields = ("id", 'need_category', 'need_leaves')
+        fields = "__all__"
 
+        wq_config = {
+            "edit": False,
+            "new": False,
+            "form": {"childUrl": "NeedLeaves"},
+        }
+        wq_field_config = {
+            "needleaves": {
+                "name": "needleaves",
+                "label": "",
+                "type": "group",
+                "childUrl": "NeedLeaves",
+                "children": [{
+                    "type": "string",
+                    "name": "need_leaf",
+                    "label": "",
+                    "childUrl": "NeedLeaves",
+                }]
+            }
+        }
+
+    def build_url_field(self, field_name, model_class):
+        """
+        Create a field representing the object's own URL.
+        """
+        """
+        Return a two tuple of (cls, kwargs) to build a serializer field with.
+        """
+        field_class = self.serializer_url_field
+        field_kwargs = {}   # {'view_name': get_detail_view_name(model_field)} get_url_kwargs(model_class)
+
+        return field_class, field_kwargs
 
 class FeelingLeafSerializer(AttachmentSerializer):
     class Meta:
@@ -247,8 +299,11 @@ class ChainedField(LookupRelatedField):
 
 
 class EntrySerializer(ModelSerializer):
+
     # todo: instead of overriding methods, make a mixin or mixins
     # todo: SerializerMethodField to imitate model methods?
+    # todo: from smart_selects.widgets.ChainedSelect adapt the media property to include other areas (in the js =[] list) that chainedfk.js could be besides the django admin static directory
+    # todo: also from widgets.ChainedSelect adapt the render() and _get_available_choices() methods
     """
      SerializerMethodField, which is read-only
         class ExampleSerializer(self):

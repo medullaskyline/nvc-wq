@@ -8,64 +8,72 @@ define({
             "url": "logout",
             "name": "logout"
         },
-        "relationshiptype": {
-            "name": "relationshiptype",
-            "url": "relationshiptypes",
+        "feelingmaincategory": {
+            "cache": "all",
+            "name": "feelingmaincategory",
+            "url": "FeelingMainCategories",
             "list": true,
             "form": [
                 {
-                    "name": "name",
-                    "label": "Name",
+                    "name": "feeling_sub_categories",
+                    "label": "Feeling Sub Categories",
                     "bind": {
                         "required": true
                     },
-                    "wq:length": 255,
-                    "type": "string"
-                },
-                {
-                    "name": "inverse_name",
-                    "label": "Inverse Name",
-                    "wq:length": 255,
-                    "type": "string"
-                },
-                {
-                    "name": "from_type",
-                    "label": "From Type",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string"
-                },
-                {
-                    "name": "to_type",
-                    "label": "To Type",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "string"
-                },
-                {
-                    "name": "computed",
-                    "label": "Computed",
-                    "type": "string"
+                    "type": "repeat",
+                    "children": [
+                        {
+                            "name": "feeling_leaves",
+                            "label": "Feeling Leaves",
+                            "bind": {
+                                "required": true
+                            },
+                            "type": "repeat",
+                            "children": []
+                        }
+                    ]
                 }
-            ],
-            "label_template": "{{name}}"
+            ]
+        },
+        "feelingsubcategory": {
+            "cache": "all",
+            "name": "feelingsubcategory",
+            "url": "FeelingSubcategories",
+            "list": true,
+            "form": [
+                {
+                    "name": "feeling_leaves",
+                    "label": "Feeling Leaves",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "repeat",
+                    "children": []
+                }
+            ]
         },
         "needcategory": {
             "cache": "all",
             "name": "needcategory",
             "url": "NeedCategories",
             "list": true,
+            "edit": false,
+            "new": false,
             "form": [
                 {
-                    "name": "need_leaves",
-                    "label": "Need Leaves",
+                    "name": "needleaves",
+                    "label": "",
                     "bind": {
                         "required": true
                     },
-                    "type": "repeat",
-                    "children": []
+                    "type": "group",
+                    "children": [
+                        {
+                            "type": "string",
+                            "name": "need_leaf",
+                            "label": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -140,33 +148,6 @@ define({
                 }
             ]
         },
-        "feelingmaincategory": {
-            "cache": "all",
-            "name": "feelingmaincategory",
-            "url": "FeelingMainCategories",
-            "list": true,
-            "form": [
-                {
-                    "name": "feeling_sub_categories",
-                    "label": "Feeling Sub Categories",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "repeat",
-                    "children": [
-                        {
-                            "name": "feeling_leaves",
-                            "label": "Feeling Leaves",
-                            "bind": {
-                                "required": true
-                            },
-                            "type": "repeat",
-                            "children": []
-                        }
-                    ]
-                }
-            ]
-        },
         "entry": {
             "my_custom_flag": true,
             "cache": "filter",
@@ -198,7 +179,7 @@ define({
                     "bind": {
                         "required": true
                     },
-                    "type": "chained",
+                    "type": "string",
                     "wq:ForeignKey": "feelingsubcategory"
                 },
                 {
@@ -250,26 +231,12 @@ define({
                 }
             ]
         },
-        "feelingsubcategory": {
-            "cache": "all",
-            "name": "feelingsubcategory",
-            "url": "FeelingSubcategories",
-            "list": true,
-            "form": [
-                {
-                    "name": "feeling_leaves",
-                    "label": "Feeling Leaves",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "repeat",
-                    "children": []
-                }
-            ]
-        },
         "needleaf": {
             "cache": "all",
             "list": true,
+            "modes": [
+                "list"
+            ],
             "name": "needleaf",
             "url": "NeedLeaves",
             "form": []
@@ -280,6 +247,50 @@ define({
             "url": "FeelingLeaves",
             "list": true,
             "form": []
+        },
+        "relationshiptype": {
+            "name": "relationshiptype",
+            "url": "relationshiptypes",
+            "list": true,
+            "form": [
+                {
+                    "name": "name",
+                    "label": "Name",
+                    "bind": {
+                        "required": true
+                    },
+                    "wq:length": 255,
+                    "type": "string"
+                },
+                {
+                    "name": "inverse_name",
+                    "label": "Inverse Name",
+                    "wq:length": 255,
+                    "type": "string"
+                },
+                {
+                    "name": "from_type",
+                    "label": "From Type",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string"
+                },
+                {
+                    "name": "to_type",
+                    "label": "To Type",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string"
+                },
+                {
+                    "name": "computed",
+                    "label": "Computed",
+                    "type": "boolean"
+                }
+            ],
+            "label_template": "{{name}}"
         }
     }
 });

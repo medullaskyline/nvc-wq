@@ -8,13 +8,41 @@ requirejs.config({
 
 requirejs(['nvc/main']);
 
-define(['wq/model', 'chainedfk'], function(model) {
+define(['wq/model', 'wq/chainedfk'], function(model, chainedfk) {
 //   var items = model('/items');
 //   var types = model({'url': 'types'});
+
+    console.log(chainedfk);
     var entry = model.Model({
         'query': {'url': '/entries'},
         'functions': [],
     });
+
+    function need_leaves(need_category) {
+
+    }
+    /*
+    var NeedCategory = model.Model({
+        'query': {'url': '/NeedMainCategories'},
+        'functions': [], // todo: add need_leaves function
+        'max_local_pages': 7, //?
+        'partial': false  //?
+    });
+
+    // wq configuration
+    var wqConfig = {
+        "pages": {
+            "item": {
+                "name": "item",
+                "url": "items",
+                "list": true
+            }
+        }
+    }
+    var myModel = model(wqConfig.pages.item);
+    */
+
+    // self.filterPage = function(filter, any, localOnly)
 /*
 https://wq.io/1.0/docs/model-js
 query	The wq/store.js query to use when retrieving data for the model. This is often an object of the form {'url': url}.

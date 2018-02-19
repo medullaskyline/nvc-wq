@@ -2,7 +2,7 @@ from wq.db import rest
 from django.contrib.auth.models import User
 
 from .models import FeelingLeaf, NeedLeaf, Entry, FeelingSubCategory, FeelingMainCategory, NeedCategory
-from .serializers import UserSerializer, EntrySerializer, FeelingMainCategorySerializer, FeelingSubCategorySerializer, NeedCategorySerializer
+from .serializers import UserSerializer, EntrySerializer, FeelingMainCategorySerializer, FeelingSubCategorySerializer, NeedCategorySerializer, NeedLeafSerializer
 
 
 def filter_entries(queryset, request):
@@ -21,6 +21,12 @@ def filter_users(queryset, request):
         return queryset.filter(pk=request.user.id)
     return queryset.filter(pk=0)
 
+def filter_need_leaves(queryset, request):
+    """entries will only be viewable by the user who entered them. except superusers can see all"""
+    print(queryset)
+    print(request)
+    return queryset
+    # return queryset.filter(need_category_id=request.get)
 
 rest.router.register_model(
         User,
@@ -55,11 +61,21 @@ rest.router.register_model(
         cache="all",
         serializer=NeedCategorySerializer,
 )
+''' need to change detail url 
+from needcategory-detail ^NeedCategories/(?P<pk>[^/.]+)$
+to needleaf-for-need_category: ^NeedCategories/(?P<need_category>[^\/\?]+)/NeedLeaves$
+or at least include a link to needleaf-for-need_category in detail view
+
+Do this with custom viewset?
+and/or function for model in models/js?
+'''
+
 rest.router.register_model(
         NeedLeaf,
         fields="__all__",
         cache="all",
         list=False,
+        modes=['list']
 )
 rest.router.register_model(
         Entry,
