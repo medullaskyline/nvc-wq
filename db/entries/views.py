@@ -23,6 +23,7 @@ class NoDetailViewset(ModelViewSet):
         for parent_content_type, fields in content_type.get_foreign_keys().items():
             if len(fields) == 1:
                 parent = self.get_parent(parent_content_type, fields[0], response)
+                if not parent: continue  # got the grandparent, not the parent
                 response.data['parent_url'] = parent_content_type.urlbase
                 response.data['parent_label'] = parent_content_type.name + ' list'
 
