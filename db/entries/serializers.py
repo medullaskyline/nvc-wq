@@ -29,12 +29,9 @@ class NeedLeafSerializer(AttachmentSerializer):
         object_field = ('need_category',)
         # from super: list_serializer_class = AttachmentListSerializer
 
-class NeedCategorySerializer(AttachedModelSerializer):
-    needleaves = NeedLeafSerializer(many=True)  # nb: no underscore in serializer fields
-    # or needleaves = HyperLinkedRelatedField(view_name="needleaf-for-need_category") instead of view_name="needcategory-detail"
-    # pass kwarg {'queryset': <qs>} or {'read_only': True} but not both and not neither
-    # {many: True}
 
+class NeedCategorySerializer(AttachedModelSerializer):
+    needleaves = NeedLeafSerializer(many=True)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -57,33 +54,19 @@ class NeedCategorySerializer(AttachedModelSerializer):
             "edit": False,
             "new": False,
             "form": {"childUrl": "NeedLeaves"},
+            "modes": ["list"],
         }
         wq_field_config = {
             "needleaves": {
                 "name": "needleaves",
                 "label": "",
-                "type": "group",
+                "type": "string",
                 "childUrl": "NeedLeaves",
                 "children": [{
-                    "type": "string",
                     "name": "need_leaf",
-                    "label": "",
-                    "childUrl": "NeedLeaves",
                 }]
             }
         }
-
-    def build_url_field(self, field_name, model_class):
-        """
-        Create a field representing the object's own URL.
-        """
-        """
-        Return a two tuple of (cls, kwargs) to build a serializer field with.
-        """
-        field_class = self.serializer_url_field
-        field_kwargs = {}   # {'view_name': get_detail_view_name(model_field)} get_url_kwargs(model_class)
-
-        return field_class, field_kwargs
 
 class FeelingLeafSerializer(AttachmentSerializer):
     class Meta:
@@ -93,25 +76,55 @@ class FeelingLeafSerializer(AttachmentSerializer):
 
 
 class FeelingSubCategorySerializer(AttachedModelSerializer, AttachmentSerializer):
-    feeling_leaves = FeelingLeafSerializer(many=True)
+    feelingleaves = FeelingLeafSerializer(many=True)
 
     class Meta:
         model = FeelingSubCategory
-        fields = ('id', 'feeling_sub_category', 'feeling_leaves')
+        fields = "__all__"
         object_field = 'feeling_main_category'
 
+        wq_config = {
+            "edit": False,
+            "new": False,
+            "form": {"childUrl": "FeelingLeaves"},
+            "modes": ["list"],
+        }
+        wq_field_config = {
+            "feelingleaves": {
+                "name": "feelingleaves",
+                "label": "",
+                "type": "string",
+                "childUrl": "FeelingLeaves",
+                "children": [{
+                    "name": "feeling_leaf",
+                }]
+            }
+        }
 
 class FeelingMainCategorySerializer(AttachedModelSerializer):
-    feeling_sub_categories = FeelingSubCategorySerializer(many=True)
-
-    def __init__(self, *args, **kwargs):
-        kwargs['allow_null'] = True
-        super().__init__(*args, **kwargs)
+    feelingsubcategories = FeelingSubCategorySerializer(many=True)
 
     class Meta:
         model = FeelingMainCategory
-        fields = ('id', 'feeling_main_category', 'feeling_sub_categories')
+        fields = "__all__"
 
+        wq_config = {
+            "edit": False,
+            "new": False,
+            "form": {"childUrl": "FeelingSubcategories"},
+            "modes": ["list"],
+        }
+        wq_field_config = {
+            "feelingsubcategories": {
+                "name": "feelingsubcategories",
+                "label": "",
+                "type": "string",
+                "childUrl": "FeelingSubcategories",
+                "children": [{
+                    "name": "feeling_subcategory",
+                }]
+            }
+        }
 
 
 '''

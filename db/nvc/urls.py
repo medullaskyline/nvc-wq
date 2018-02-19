@@ -27,7 +27,6 @@ if settings.DEBUG_WITH_RUNSERVER:
 
     urlpatterns += static('/media/', document_root=settings.MEDIA_ROOT)
 
-
     # after building...
     urlpatterns += static(
         # '/', document_root=os.path.join(settings.BASE_DIR, 'htdocs')

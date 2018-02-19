@@ -61,14 +61,6 @@ rest.router.register_model(
         cache="all",
         serializer=NeedCategorySerializer,
 )
-''' need to change detail url 
-from needcategory-detail ^NeedCategories/(?P<pk>[^/.]+)$
-to needleaf-for-need_category: ^NeedCategories/(?P<need_category>[^\/\?]+)/NeedLeaves$
-or at least include a link to needleaf-for-need_category in detail view
-
-Do this with custom viewset?
-and/or function for model in models/js?
-'''
 
 rest.router.register_model(
         NeedLeaf,

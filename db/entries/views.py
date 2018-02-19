@@ -50,6 +50,9 @@ Feeling SubCategories, NeedLeafs, FeelingLeafs
         if self.target:
             response.data['target'] = self.target
         ct = get_ct(self.model)
+        
+        # todo: modify this for the needleafs-for-needcategory so it doesn't go back to the needcategory
+        # view so needcategory detail is never accessed
         for pct, fields in ct.get_foreign_keys().items():
             if len(fields) == 1:
                 self.get_parent(pct, fields[0], response)

@@ -48,8 +48,11 @@ class BaseEntry(models.Model):
 class FeelingMainCategory(models.Model):
     feeling_main_category = models.CharField(max_length=256, editable=False, choices=MAIN_CATEGORY_CHOICES)
 
-    def feeling_sub_categories(self):
-        return FeelingSubCategory.objects.filter(feeling_main_category_id=self.pk)
+    def feelingsubcategories(self):
+        return self.feelingsubcategory_set.all()
+
+    def get_absolute_url(self):
+        return reverse('feelingsubcategory-by-feelingmaincategory', kwargs={'feeling_main_category': self.pk})
 
     def __str__(self):
         return self.feeling_main_category
@@ -62,8 +65,8 @@ class FeelingSubCategory(models.Model):
     feeling_main_category = models.ForeignKey(FeelingMainCategory, editable=False)
     feeling_sub_category = models.CharField(max_length=256, editable=False, choices=SUBCAT_CHOICES)
 
-    def feeling_leaves(self):
-        return FeelingLeaf.objects.filter(feeling_sub_category_id=self.pk)
+    def feelingleaves(self):
+        return self.feelingleaf_set.all()
 
     def __str__(self):
         return self.feeling_sub_category

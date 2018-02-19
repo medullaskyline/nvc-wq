@@ -8,50 +8,6 @@ define({
             "url": "logout",
             "name": "logout"
         },
-        "feelingmaincategory": {
-            "cache": "all",
-            "name": "feelingmaincategory",
-            "url": "FeelingMainCategories",
-            "list": true,
-            "form": [
-                {
-                    "name": "feeling_sub_categories",
-                    "label": "Feeling Sub Categories",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "repeat",
-                    "children": [
-                        {
-                            "name": "feeling_leaves",
-                            "label": "Feeling Leaves",
-                            "bind": {
-                                "required": true
-                            },
-                            "type": "repeat",
-                            "children": []
-                        }
-                    ]
-                }
-            ]
-        },
-        "feelingsubcategory": {
-            "cache": "all",
-            "name": "feelingsubcategory",
-            "url": "FeelingSubcategories",
-            "list": true,
-            "form": [
-                {
-                    "name": "feeling_leaves",
-                    "label": "Feeling Leaves",
-                    "bind": {
-                        "required": true
-                    },
-                    "type": "repeat",
-                    "children": []
-                }
-            ]
-        },
         "needcategory": {
             "cache": "all",
             "name": "needcategory",
@@ -66,86 +22,17 @@ define({
                     "bind": {
                         "required": true
                     },
-                    "type": "group",
+                    "type": "string",
                     "children": [
                         {
-                            "type": "string",
-                            "name": "need_leaf",
-                            "label": ""
+                            "name": "need_leaf"
                         }
-                    ]
+                    ],
+                    "childUrl": "NeedLeaves"
                 }
-            ]
-        },
-        "user": {
-            "my_custom_flag": true,
-            "lookup": "username",
-            "can_add": false,
-            "cache": "filter",
-            "name": "user",
-            "url": "users",
-            "list": true,
-            "fields": [
-                "username",
-                "first_name",
-                "last_name",
-                "email",
-                "is_staff",
-                "is_active",
-                "last_login",
-                "date_joined"
             ],
-            "form": [
-                {
-                    "name": "username",
-                    "label": "Username",
-                    "bind": {
-                        "required": true
-                    },
-                    "hint": "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.",
-                    "wq:length": 150,
-                    "type": "string"
-                },
-                {
-                    "name": "first_name",
-                    "label": "First Name",
-                    "wq:length": 30,
-                    "type": "string"
-                },
-                {
-                    "name": "last_name",
-                    "label": "Last Name",
-                    "wq:length": 30,
-                    "type": "string"
-                },
-                {
-                    "name": "email",
-                    "label": "Email address",
-                    "wq:length": 254,
-                    "type": "string"
-                },
-                {
-                    "name": "is_staff",
-                    "label": "Staff status",
-                    "hint": "Designates whether the user can log into this admin site.",
-                    "type": "boolean"
-                },
-                {
-                    "name": "is_active",
-                    "label": "Active",
-                    "hint": "Designates whether this user should be treated as active. Unselect this instead of deleting accounts.",
-                    "type": "boolean"
-                },
-                {
-                    "name": "last_login",
-                    "label": "Last Login",
-                    "type": "dateTime"
-                },
-                {
-                    "name": "date_joined",
-                    "label": "Date Joined",
-                    "type": "dateTime"
-                }
+            "modes": [
+                "list"
             ]
         },
         "entry": {
@@ -231,6 +118,13 @@ define({
                 }
             ]
         },
+        "feelingleaf": {
+            "cache": "all",
+            "name": "feelingleaf",
+            "url": "FeelingLeaves",
+            "list": true,
+            "form": []
+        },
         "needleaf": {
             "cache": "all",
             "list": true,
@@ -241,12 +135,76 @@ define({
             "url": "NeedLeaves",
             "form": []
         },
-        "feelingleaf": {
-            "cache": "all",
-            "name": "feelingleaf",
-            "url": "FeelingLeaves",
+        "user": {
+            "my_custom_flag": true,
+            "lookup": "username",
+            "can_add": false,
+            "cache": "filter",
+            "name": "user",
+            "url": "users",
             "list": true,
-            "form": []
+            "fields": [
+                "username",
+                "first_name",
+                "last_name",
+                "email",
+                "is_staff",
+                "is_active",
+                "last_login",
+                "date_joined"
+            ],
+            "form": [
+                {
+                    "name": "username",
+                    "label": "Username",
+                    "bind": {
+                        "required": true
+                    },
+                    "hint": "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.",
+                    "wq:length": 150,
+                    "type": "string"
+                },
+                {
+                    "name": "first_name",
+                    "label": "First Name",
+                    "wq:length": 30,
+                    "type": "string"
+                },
+                {
+                    "name": "last_name",
+                    "label": "Last Name",
+                    "wq:length": 30,
+                    "type": "string"
+                },
+                {
+                    "name": "email",
+                    "label": "Email address",
+                    "wq:length": 254,
+                    "type": "string"
+                },
+                {
+                    "name": "is_staff",
+                    "label": "Staff status",
+                    "hint": "Designates whether the user can log into this admin site.",
+                    "type": "boolean"
+                },
+                {
+                    "name": "is_active",
+                    "label": "Active",
+                    "hint": "Designates whether this user should be treated as active. Unselect this instead of deleting accounts.",
+                    "type": "boolean"
+                },
+                {
+                    "name": "last_login",
+                    "label": "Last Login",
+                    "type": "dateTime"
+                },
+                {
+                    "name": "date_joined",
+                    "label": "Date Joined",
+                    "type": "dateTime"
+                }
+            ]
         },
         "relationshiptype": {
             "name": "relationshiptype",
@@ -291,6 +249,60 @@ define({
                 }
             ],
             "label_template": "{{name}}"
+        },
+        "feelingmaincategory": {
+            "cache": "all",
+            "name": "feelingmaincategory",
+            "url": "FeelingMainCategories",
+            "list": true,
+            "edit": false,
+            "new": false,
+            "form": [
+                {
+                    "name": "feelingsubcategories",
+                    "label": "",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "children": [
+                        {
+                            "name": "feeling_subcategory"
+                        }
+                    ],
+                    "childUrl": "FeelingSubcategories"
+                }
+            ],
+            "modes": [
+                "list"
+            ]
+        },
+        "feelingsubcategory": {
+            "cache": "all",
+            "name": "feelingsubcategory",
+            "url": "FeelingSubcategories",
+            "list": true,
+            "edit": false,
+            "new": false,
+            "form": [
+                {
+                    "name": "feelingleaves",
+                    "label": "",
+                    "bind": {
+                        "required": true
+                    },
+                    "type": "string",
+                    "children": [
+                        {
+                            "name": "feeling_leaf"
+                        }
+                    ],
+                    "childUrl": "FeelingLeaves"
+                }
+            ],
+            "modes": [
+                "list"
+            ]
         }
     }
 });
