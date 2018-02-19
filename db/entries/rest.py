@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 from .models import FeelingLeaf, NeedLeaf, Entry, FeelingSubCategory, FeelingMainCategory, NeedCategory
 from .serializers import UserSerializer, EntrySerializer, FeelingMainCategorySerializer, FeelingSubCategorySerializer, NeedCategorySerializer, NeedLeafSerializer
-
+from .views import NoDetailViewset
 
 def filter_entries(queryset, request):
     """entries will only be viewable by the user who entered them. except superusers can see all"""
@@ -48,18 +48,20 @@ rest.router.register_model(
         FeelingSubCategory,
         serializer=FeelingSubCategorySerializer,
         cache="all",
+        viewset=NoDetailViewset,
 )
 rest.router.register_model(
         FeelingLeaf,
         fields="__all__",
         cache="all",
-
+        viewset=NoDetailViewset,
 )
 rest.router.register_model(
         NeedCategory,
         fields="__all__",
         cache="all",
         serializer=NeedCategorySerializer,
+
 )
 
 rest.router.register_model(
@@ -67,7 +69,8 @@ rest.router.register_model(
         fields="__all__",
         cache="all",
         list=False,
-        modes=['list']
+        modes=['list'],
+        viewset=NoDetailViewset,
 )
 rest.router.register_model(
         Entry,

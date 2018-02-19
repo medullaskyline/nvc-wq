@@ -52,7 +52,7 @@ class NeedCategorySerializer(AttachedModelSerializer):
 
         wq_config = {
             "edit": False,
-            "new": False,
+            "can_add": False,
             "form": {"childUrl": "NeedLeaves"},
             "modes": ["list"],
         }
@@ -85,7 +85,7 @@ class FeelingSubCategorySerializer(AttachedModelSerializer, AttachmentSerializer
 
         wq_config = {
             "edit": False,
-            "new": False,
+            "can_add": False,
             "form": {"childUrl": "FeelingLeaves"},
             "modes": ["list"],
         }
@@ -110,7 +110,7 @@ class FeelingMainCategorySerializer(AttachedModelSerializer):
 
         wq_config = {
             "edit": False,
-            "new": False,
+            "can_add": False,
             "form": {"childUrl": "FeelingSubcategories"},
             "modes": ["list"],
         }

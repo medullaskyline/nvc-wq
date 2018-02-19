@@ -5,15 +5,49 @@ from rest_framework.decorators import detail_route
 from wq.db.rest.model_tools import get_by_identifier
 from rest_framework.response import Response
 
-
 from rest_framework.routers import Route
 from wq.db.rest.views import ModelViewSet
 from wq.db.rest.models import get_ct
 from wq.db.patterns.relate.models import get_related_parents, get_related_children
 
 
+class NoDetailViewset(ModelViewSet):
+
+    def list(self, request, *args, **kwargs):
+
+        response = super().list(
+            request, *args, **kwargs
+        )
+
+        content_type = get_ct(self.model)
+        for parent_content_type, fields in content_type.get_foreign_keys().items():
+            if len(fields) == 1:
+                parent = self.get_parent(parent_content_type, fields[0], response)
+                response.data['parent_url'] = parent_content_type.urlbase
+                response.data['parent_label'] = parent_content_type.name + ' list'
+
+                for grandparent_content_type, fields in parent_content_type.get_foreign_keys().items():
+                    if len(fields) == 1:
+                        grandparent_model_class = grandparent_content_type.model_class()
+                        parent_model_class = parent_content_type.model_class()
+                        grandparent_field_name = ''
+                        for field in parent_model_class._meta.fields:
+                            if type(field.rel).__name__ == 'ManyToOneRel':
+                                if field.rel.to == grandparent_model_class:
+                                    grandparent_field_name = field.name
+
+                        grandparent_id = parent_model_class.objects.values().get(id=response.data['parent_id']).get(
+                            grandparent_field_name + '_id')
+                        response.data[
+                            'parent_url'] = grandparent_content_type.urlbase + '/' + str(
+                            grandparent_id) + '/' + parent_content_type.urlbase
+                        # the parent_label doesn't work
+                        response.data['parent_label'] += ' for ' + str(getattr(parent, grandparent_field_name))
+
+        return response
+
+
 """
-todo override ModelViewSet for listing
 Feeling SubCategories, NeedLeafs, FeelingLeafs
 
     def retrieve(self, request, *args, **kwargs):
@@ -35,27 +69,4 @@ Feeling SubCategories, NeedLeafs, FeelingLeafs
             instance = self.get_object()
             serializer = self.get_serializer(instance)
             return Response(serializer.data)
-                   
-    def list(self, request, *args, **kwargs):
-    
-        1. modification 1: add {'<parent content type name>': <parent instance>}
-        to kwargs so that it will correctly retrieve it from self.get_parent
-        kwargs.extend({'FeelingMainCategory': [1] })  or 'FeelingSubCategory', 'NeedCategory', etc
-        response = super().list(
-            request, *args, **kwargs
-        )
-        if not isinstance(response.data, dict):
-            return response
-
-        if self.target:
-            response.data['target'] = self.target
-        ct = get_ct(self.model)
-        
-        # todo: modify this for the needleafs-for-needcategory so it doesn't go back to the needcategory
-        # view so needcategory detail is never accessed
-        for pct, fields in ct.get_foreign_keys().items():
-            if len(fields) == 1:
-                self.get_parent(pct, fields[0], response)
-        return response
 """
-
