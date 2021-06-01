@@ -24,7 +24,7 @@ swapper==1.1.0
 traceback2==1.4.0
 unicodecsv==0.14.1
 unittest2==1.1.0
-urllib3==1.22
+urllib3==1.26.5
 wq==1.0.0
 wq.app==1.0.0
 wq.core==1.0.0
